@@ -8,13 +8,17 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
+  transition: background-color 0.4s;
   font-size: 14rem;
-  background-color: $--primary-color;
+  background-color: transparent;
   color: white;
   padding: 0 3vw;
   z-index: 5;
 }
 
+header.active {
+  background-color: $--primary-color;
+}
 .main-navigation {
   display: flex;
   .logo-container {
@@ -34,7 +38,7 @@ header {
       align-items: center;
       li {
         &:not(:last-child) {
-          margin-right: 15px;
+          margin-right: 20px;
         }
       }
     }

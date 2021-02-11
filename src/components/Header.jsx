@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 // import "./styles/_Header.scss";
 import logo from "../assets/img/netflix.svg";
 import profile from "../assets/img/profile.jpg";
 
 const Header = () => {
+  const [navColor, setNavColor] = useState(false);
+  const headerRef = useRef();
+  window.addEventListener("scroll", (e) => {
+    let scrollValue = window.scrollY;
+    if (scrollValue > 25) {
+      setNavColor(true);
+    } else {
+      setNavColor(false);
+    }
+  });
   return (
-    <header>
+    <header className={navColor ? "active" : ""}>
       <div className="main-navigation">
         <picture className="logo-container">
           <img src={logo} alt="Logo del sitio web Netflix" />
