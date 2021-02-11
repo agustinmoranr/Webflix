@@ -1,19 +1,26 @@
 import React, { useState, useRef } from "react";
 import testVideo from "../assets/videos/test-video-2.mp4";
-
+const posterVideo =
+  "https://occ-0-29-987.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABcX_OLWfPwIOdND595ti_aL-8vtYh-UAi5E7j0xBOkay1m2CNvbUq0MQ1XgFCFueR8LHMPa6VZGL7RlPtUPvxGUt6MLw.jpg?r=a03";
 const Hero = () => {
-  const [mediaBtn, setMediaBtn] = useState("volume_up");
-  const heroPlayer = useRef();
+  const [buttonIcon, setButtonIcon] = useState("volume_up");
+  const heroPlayer = useRef(null);
 
-  function handleButtonAction(e) {
+  (function autoPlay() {
+    setTimeout(() => {
+      if (heroPlayer.current !== null) {
+        return heroPlayer.current.play();
+      }
+    }, 3000);
+  })();
+  function handleReplay(e) {
     e.preventDefault();
-    let mediaBtnCopy = mediaBtn;
+    let mediaBtnCopy = buttonIcon;
     mediaBtnCopy = "replay";
-    setMediaBtn(mediaBtnCopy);
+    setButtonIcon(mediaBtnCopy);
   }
-
   function toggleMute(icon) {
-    let mediaBtnCopy = mediaBtn;
+    let mediaBtnCopy = buttonIcon;
     if (icon === "volume_off") {
       mediaBtnCopy = "volume_up";
     }
@@ -23,23 +30,23 @@ const Hero = () => {
     if (icon === "replay") {
       heroPlayer.current.play();
       mediaBtnCopy = "volume_up";
-      setMediaBtn(mediaBtnCopy);
+      setButtonIcon(mediaBtnCopy);
       return (heroPlayer.current.muted = false);
     }
-    setMediaBtn(mediaBtnCopy);
+    setButtonIcon(mediaBtnCopy);
     return (heroPlayer.current.muted = !heroPlayer.current.muted);
   }
-  function handleAction(e) {
+  function handleIcon(e) {
     e.preventDefault();
-    return toggleMute(mediaBtn);
+    return toggleMute(buttonIcon);
   }
 
   return (
     <section className="hero">
       <video
         ref={heroPlayer}
-        onEnded={handleButtonAction}
-        autoPlay
+        onEnded={handleReplay}
+        poster={posterVideo}
         className="hero__video"
       >
         <source src={testVideo} type="video/mp4" />
@@ -76,8 +83,8 @@ const Hero = () => {
           </button>
         </div>
         <div className="hero__controls__player">
-          <button onClick={handleAction} className="material-icons">
-            {mediaBtn}
+          <button onClick={handleIcon} className="material-icons">
+            {buttonIcon}
           </button>
           <span>TV-MA</span>
         </div>

@@ -1,11 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 // import "./styles/_Header.scss";
 import logo from "../assets/img/netflix.svg";
 import profile from "../assets/img/profile.jpg";
 
 const Header = () => {
   const [navColor, setNavColor] = useState(false);
-  const headerRef = useRef();
   window.addEventListener("scroll", (e) => {
     let scrollValue = window.scrollY;
     if (scrollValue > 25) {
