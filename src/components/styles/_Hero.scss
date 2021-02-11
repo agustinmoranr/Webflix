@@ -1,0 +1,122 @@
+.hero {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  color: $--primary-font-color;
+
+  .material-icons,
+  span {
+    color: $--primary-font-color;
+  }
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+.hero__logo {
+  position: relative;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  margin-left: 3vw;
+  margin-top: 28px;
+}
+
+.hero__synopsis {
+  position: relative;
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  margin-left: 3vw;
+  z-index: 2;
+
+  &__description,
+  &__title {
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
+    line-height: 36rem;
+  }
+
+  &__description {
+    font-size: 26rem;
+  }
+
+  &__title h2 {
+    margin: 20px 0;
+    font-size: 30rem;
+  }
+}
+.hero__controls {
+  display: flex;
+  position: relative;
+  grid-row: 4 / 5;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  div {
+    width: auto;
+    display: flex;
+    align-items: center;
+    button {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__info {
+    background-color: $--third-color;
+    padding: 12rem 28rem;
+    font-size: 22rem;
+    border-radius: 4rem;
+    i:first-child {
+      margin-right: 15px;
+    }
+    .material-icons {
+      font-size: 34rem;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &__play {
+    background-color: $--primary-font-color;
+    margin-left: 3vw;
+    margin-right: 14px;
+    .material-icons,
+    span {
+      color: $--primary-color;
+      font-weight: 600;
+    }
+
+    @extend .hero__controls__info;
+  }
+
+  &__player {
+    .material-icons {
+      width: 50px;
+      height: 50px;
+      border: 1px solid $--primary-font-color;
+      border-radius: 50%;
+      padding: 12rem;
+      font-weight: 300;
+      margin-right: 20px;
+      text-align: center;
+      vertical-align: middle;
+      &:hover {
+        background-color: rgba($--primary-color, 0.6);
+      }
+    }
+    span {
+      width: 7vw;
+      padding: 10rem 10rem 10rem 20rem;
+      font-size: 22rem;
+      border-left: 2px solid $--secondary-font-color;
+      background-color: rgba($--primary-color, 0.6);
+    }
+  }
+}
