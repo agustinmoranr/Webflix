@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "./styles/_Header.scss";
 import logo from "../assets/img/netflix.svg";
 import profile from "../assets/img/profile.jpg";
 

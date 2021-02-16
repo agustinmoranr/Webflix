@@ -1,9 +1,10 @@
 .hero {
-  height: 105vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
   color: $--primary-font-color;
+  user-select: none;
   .material-icons,
   span {
     color: $--primary-font-color;

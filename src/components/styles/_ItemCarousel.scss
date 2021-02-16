@@ -1,0 +1,85 @@
+.item-carousel {
+  width: 293px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2px;
+  // border: 1px solid red;
+  transition: 450ms all;
+  &:first-child {
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+  }
+  &__img {
+    width: inherit;
+    height: 165px;
+    display: block;
+    img {
+      vertical-align: top;
+      border-radius: 4px;
+      @include images(inherit, inherit, cover);
+    }
+  }
+  &__details {
+    display: none;
+    padding: 15px 10px;
+    font-size: 14rem;
+    box-shadow: 0px 0px 30px black;
+    background: $--primary-color;
+
+    &__controls {
+      display: flex;
+      justify-content: space-between;
+
+      li.material-icons,
+      button.material-icons {
+        visibility: visible;
+        font-size: 44rem;
+        color: $--primary-font-color;
+        border-radius: 50%;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .show-more {
+        border: 1px solid white;
+      }
+    }
+    &__info {
+      margin: 10px 0;
+
+      .info__recomendation {
+        margin-right: 8px;
+        color: $--third-font-color;
+      }
+
+      .info__mature-rating {
+        border: 1px solid $--primary-font-color;
+        margin-right: 8px;
+        padding: 1px;
+      }
+    }
+
+    &__categories span {
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+      &::before {
+        content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: $--third-color; /* Change the color */
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 12rem; /* Also needed for space (tweak if needed) */
+      }
+    }
+  }
+
+  &:hover {
+    position: relative;
+    // box-shadow: 0px 0px 30px black;
+    z-index: 2;
+    .item-carousel__details {
+      display: block;
+    }
+  }
+}

@@ -1,3 +1,11 @@
 @import "../../index.scss";
 @import "../../components/styles/Header";
 @import "../../components/styles/Hero";
+@import "../../components/styles/ItemCarousel";
+@import "../../components/styles/Carousel";
+
+.home-content {
+  .carousel {
+    margin-bottom: -100px;
+  }
+}

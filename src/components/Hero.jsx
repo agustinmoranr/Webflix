@@ -1,18 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import testVideo from "../assets/videos/test-video-2.mp4";
 const posterVideo =
-  "https://occ-0-29-987.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABcX_OLWfPwIOdND595ti_aL-8vtYh-UAi5E7j0xBOkay1m2CNvbUq0MQ1XgFCFueR8LHMPa6VZGL7RlPtUPvxGUt6MLw.jpg?r=a03";
+  "https://occ-0-29-987.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSFemv1LOz5nHsQa6TrW1N_yyCOIMa11goJH_f_n4XAt6ygtncHEo16ESfZDWHHyKC5_E3tnh-2bD6oYBXbjqxb8MOOB.jpg?r=360";
 const Hero = () => {
   const [buttonIcon, setButtonIcon] = useState("volume_up");
   const heroPlayer = useRef(null);
 
-  (function autoPlay() {
+  useEffect(() => autoPlay(), []);
+  function autoPlay() {
     setTimeout(() => {
-      if (heroPlayer.current !== null) {
-        return heroPlayer.current.play();
-      }
+      return heroPlayer.current.play();
     }, 3000);
-  })();
+  }
   function handleReplay(e) {
     e.preventDefault();
     let mediaBtnCopy = buttonIcon;
@@ -29,9 +28,9 @@ const Hero = () => {
     }
     if (icon === "replay") {
       heroPlayer.current.play();
-      mediaBtnCopy = "volume_up";
+      mediaBtnCopy = "volume_off";
       setButtonIcon(mediaBtnCopy);
-      return (heroPlayer.current.muted = false);
+      return (heroPlayer.current.muted = true);
     }
     setButtonIcon(mediaBtnCopy);
     return (heroPlayer.current.muted = !heroPlayer.current.muted);
@@ -54,7 +53,7 @@ const Hero = () => {
       <div className="hero__logo">
         <picture>
           <img
-            src="https://occ-0-29-116.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABTtL_nABZG6H0nH54qzdDIcTUNDfA_-jA7QyyUcHJ65dAnVjKwSxie-cZoEcwyMKpHQNGtkbFVa4-4R6bqXOVqffwWCPNiS8kFwY.png?r=7f7"
+            src="https://occ-0-29-987.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABU0SsrQ7stPoG2alvtMW7Ud2UBI0AaPTTRG4Eg2xIzpkIoyLTJ9Eex53bwwu024ZIehu-Ki18X2Dkv81zEIgvKwLHrH0387wbBS0kGqFtjrzGgVflZOL-RNgiUuFU69DwRLjDgYw8l9vOfYQUfOBwyJY3bICasoIccy3xz0joL3gLw.png?r=900"
             alt=""
           />
         </picture>
@@ -65,9 +64,8 @@ const Hero = () => {
         </div>
         <div className="hero__synopsis__description">
           <p>
-            Hartos de que su matrimonio no ande bien, Connie y su marido
-            acuerdan una separación de 100 días para averiguar si el amor
-            realmente crece con la distancia.
+            Buscaba respuestas sobre ella misma, pero terminó encontrando algo
+            más oscuro en un escalofriante hotel de Los Ángeles.
           </p>
         </div>
       </article>

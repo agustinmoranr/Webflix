@@ -1,13 +1,45 @@
 import "./styles/Home.scss";
-
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import Carousel from "../components/Carousel";
+import ItemCarousel from "../components/ItemCarousel";
+
 function App() {
   return (
     <>
       <Header />
       <Hero />
-      <p>
+      <main className="home-content">
+        <Carousel title="Mi Lista">
+          <ItemCarousel index="1" />
+          <ItemCarousel index="2" />
+          <ItemCarousel index="3" />
+          <ItemCarousel index="4" />
+          <ItemCarousel index="5" />
+          <ItemCarousel index="6" />
+          <ItemCarousel index="7" />
+          <ItemCarousel index="8" />
+          <ItemCarousel index="9" />
+          <ItemCarousel index="10" />
+          <ItemCarousel index="11" />
+          <ItemCarousel index="12" />
+          <ItemCarousel index="13" />
+        </Carousel>
+        <Carousel title="Tendencias">
+          <ItemCarousel />
+          <ItemCarousel />
+          <ItemCarousel />
+          <ItemCarousel />
+          <ItemCarousel />
+          <ItemCarousel />
+        </Carousel>
+        <Carousel title="Originales de Netflix">
+          <ItemCarousel />
+          <ItemCarousel />
+          <ItemCarousel />
+        </Carousel>
+      </main>
+      {/* <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, qui
         iure doloribus libero aliquam consectetur maiores dignissimos optio,
         unde repellendus placeat, molestias voluptates facere sunt voluptatum.
@@ -120,7 +152,7 @@ function App() {
         accusantium neque quaerat nam corporis ipsa dignissimos libero voluptas
         corrupti totam tempore nulla impedit praesentium aspernatur, esse rerum
         ullam sit rem, doloremque consectetur.
-      </p>
+      </p> */}
     </>
   );
 }
