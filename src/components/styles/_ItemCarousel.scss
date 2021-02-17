@@ -6,6 +6,10 @@
   padding: 0 2px;
   // border: 1px solid red;
   transition: 450ms all;
+
+  &__wrapper {
+    width: inherit;
+  }
   &:first-child {
     -webkit-transform-origin: center left;
     transform-origin: center left;
@@ -17,6 +21,7 @@
     img {
       vertical-align: top;
       border-radius: 4px;
+      object-position: 0% 99%;
       @include images(inherit, inherit, cover);
     }
   }
