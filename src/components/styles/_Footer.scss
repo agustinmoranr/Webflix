@@ -1,0 +1,38 @@
+.footer {
+  max-width: 980px;
+  margin: 20px auto 0;
+  padding: 15px 4%;
+  span,
+  a {
+    font-size: 13rem;
+    color: grey;
+  }
+  &__social-links {
+    margin-bottom: 10px;
+    a:not(:last-child) {
+      margin-right: 15px;
+    }
+    .svg-icon {
+      fill: grey;
+      height: 25px;
+      width: 36px;
+    }
+  }
+
+  &__contact-links {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    a {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__service {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    span {
+      padding: 5px;
+      border: 1px solid grey;
+    }
+  }
+}

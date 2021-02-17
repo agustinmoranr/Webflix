@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Carousel from "../components/Carousel";
 import ItemCarousel from "../components/ItemCarousel";
+import Footer from "../components/Footer";
 
 function App() {
   const [movies, setMovies] = useState({
@@ -72,6 +73,7 @@ function App() {
           <p>Loading...</p>
         )}
       </main>
+      <Footer />
     </>
   );
 }

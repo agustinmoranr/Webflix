@@ -5,6 +5,7 @@ const useCarousel = (length) => {
     width: 0,
     maxMargin: 0,
   });
+
   const [onHover, setOnHover] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
   const carouselContainerRef = useRef(null);

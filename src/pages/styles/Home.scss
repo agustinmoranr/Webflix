@@ -3,9 +3,9 @@
 @import "../../components/styles/Hero";
 @import "../../components/styles/ItemCarousel";
 @import "../../components/styles/Carousel";
+@import "../../components/styles/Footer";
 
 .home-content {
-  .carousel {
-    margin-bottom: -100px;
-  }
+  position: relative;
+  top: -100px;
 }
