@@ -1,5 +1,6 @@
 .item-carousel {
   width: 293px;
+  height: fit-content;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -38,6 +39,7 @@
 
       li.material-icons,
       button.material-icons {
+        position: relative;
         visibility: visible;
         font-size: 44rem;
         color: $--primary-font-color;

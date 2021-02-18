@@ -5,12 +5,13 @@ const Carousel = ({ title, children, length }) => {
     setOnHover,
     handleNextContent,
     handlePreviousContent,
-    setTransitioning,
-    carouselContainerRef,
+    // setTransitioning,
+    itemsContainerRef,
+    carouselRef,
   } = useCarousel(length);
 
   return (
-    <section className="carousel">
+    <section ref={carouselRef} className="carousel">
       <h1 className="carousel__title">{title}</h1>
       <div
         className="carousel__container"
@@ -26,8 +27,8 @@ const Carousel = ({ title, children, length }) => {
         </button>
 
         <div
-          onTransitionEnd={() => setTransitioning(false)}
-          ref={carouselContainerRef}
+          ref={itemsContainerRef}
+          // onTransitionEnd={() => setTransitioning(false)}
           className="items-container"
         >
           {children}

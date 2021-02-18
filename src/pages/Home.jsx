@@ -41,7 +41,7 @@ function App() {
       <Header />
       <Hero />
       <main className="home-content">
-        {movies.miLista.length > 0 ? (
+        {/* {movies.miLista.length > 0 ? (
           <Carousel title="Mi Lista" length={movies.miLista.length}>
             {movies.miLista.map((movie, index) => (
               <ItemCarousel key={movie.id} {...movie} />
@@ -49,7 +49,7 @@ function App() {
           </Carousel>
         ) : (
           <div></div>
-        )}
+        )} */}
 
         {movies.tendencias.length > 0 ? (
           <Carousel title="Tendencias" length={movies.tendencias.length}>
