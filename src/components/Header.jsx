@@ -21,19 +21,19 @@ const Header = () => {
         <nav className="main-navigation__container">
           <ul>
             <li>
-              <a href="#">Inicio</a>
+              <a href="/">Inicio</a>
             </li>
             <li>
-              <a href="#">Series</a>
+              <a href="/">Series</a>
             </li>
             <li>
-              <a href="#">Películas</a>
+              <a href="/">Películas</a>
             </li>
             <li>
-              <a href="#">Novedades populares</a>
+              <a href="/">Novedades populares</a>
             </li>
             <li>
-              <a href="#">Mi lista</a>
+              <a href="/">Mi lista</a>
             </li>
           </ul>
         </nav>
@@ -50,7 +50,7 @@ const Header = () => {
             <i className="material-icons">notifications</i>
           </li>
           <li className="profile-details">
-            <a href="#">
+            <a href="/">
               <img src={profile} alt="Profile of user" />
             </a>
             <i className="material-icons">arrow_drop_down</i>

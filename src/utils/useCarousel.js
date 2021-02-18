@@ -5,7 +5,7 @@ const useCarousel = (length) => {
   const [transitioning, setTransitioning] = useState(false);
   const itemsContainerRef = useRef(null);
   const carouselRef = useRef(null);
-  console.log(transitioning);
+  // console.log(transitioning);
   useEffect(() => {
     const itemsContainer = itemsContainerRef.current;
 
@@ -27,6 +27,7 @@ const useCarousel = (length) => {
     const itemsContainer = itemsContainerRef.current;
     console.log("itemContainer", itemsContainer);
     console.log("scroll position start", itemsContainer.scrollLeft);
+    /*eslint no-self-compare: 0*/
     if (itemsContainer.scrollLeft === itemsContainer.scrollLeft)
       itemsContainer.scrollLeft = 0;
     itemsContainer.scrollLeft += itemsContainer.offsetWidth;
