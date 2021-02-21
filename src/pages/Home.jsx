@@ -39,7 +39,7 @@ function App() {
   return (
     <>
       <Header />
-      <Hero />
+      {/* <Hero /> */}
       <main className="home-content">
         {/* {movies.miLista.length > 0 ? (
           <Carousel title="Mi Lista" length={movies.miLista.length}>
@@ -50,7 +50,7 @@ function App() {
         ) : (
           <div></div>
         )} */}
-
+        {/* 
         {movies.tendencias.length > 0 ? (
           <Carousel title="Tendencias" length={movies.tendencias.length}>
             {movies.tendencias.map((movie, index) => (
@@ -71,9 +71,9 @@ function App() {
           </Carousel>
         ) : (
           <p>Loading...</p>
-        )}
+        )} */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
