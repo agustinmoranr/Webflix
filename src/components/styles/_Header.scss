@@ -171,9 +171,14 @@ header.active {
 }
 
 @media screen and (max-width: "1024px") {
-  header,
+  // header,
   header.active {
     background-color: rgba(0, 0, 0, 0.9);
+  }
+  .site-navigation .menu-wrapper .logo-container {
+    width: auto;
+    max-width: 120px;
+    min-width: 94px;
   }
   .site-navigation .menu-wrapper-explore {
     display: flex;
@@ -188,7 +193,7 @@ header.active {
     right: 0;
     left: 20px;
     top: 70px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     transition: 500ms all;
     ul {
       flex-direction: column;
@@ -240,6 +245,7 @@ header.active {
       width: 240px;
       border: 1px solid $--secondary-font-color;
       display: inline-block;
+      background: $--primary-color;
       label.material-icons {
         display: none;
       }

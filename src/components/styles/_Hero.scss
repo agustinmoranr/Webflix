@@ -2,7 +2,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: 70px repeat(5, 1fr);
   color: $--primary-font-color;
   user-select: none;
   .material-icons,
@@ -27,21 +27,29 @@
   margin-top: 28px;
 }
 
-.hero__synopsis {
+.hero__info {
   position: relative;
   grid-row: 3 / 4;
   grid-column: 1 / 2;
   margin-left: 3vw;
   z-index: 2;
 
-  &__description,
-  &__title {
+  &__synopsis,
+  &__title,
+  &__details {
     font-weight: 400;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
     line-height: 36rem;
   }
-
-  &__description {
+  &__details {
+    display: none;
+    align-items: center;
+    font-size: 13rem;
+    p:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &__synopsis {
     font-size: 26rem;
   }
 
@@ -57,7 +65,7 @@
   grid-column: 1 / -1;
   justify-content: space-between;
   align-items: flex-end;
-
+  z-index: 1;
   div {
     width: auto;
     display: flex;
@@ -67,8 +75,8 @@
       align-items: center;
     }
   }
-
-  &__info {
+  &__moreInfo,
+  &__play {
     background-color: $--third-color;
     padding: 12rem 28rem;
     font-size: 22rem;
@@ -92,8 +100,6 @@
       color: $--primary-color;
       font-weight: 600;
     }
-
-    @extend .hero__controls__info;
   }
 
   &__player {
@@ -118,5 +124,113 @@
       border-left: 2px solid $--secondary-font-color;
       background-color: rgba($--primary-color, 0.6);
     }
+  }
+}
+
+.hero-background-dark {
+  display: none;
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  position: relative;
+  z-index: -1;
+  background: black;
+}
+.hero-background-img {
+  display: none;
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+  filter: brightness(0.9);
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    @include images(100%, 100%, cover);
+  }
+
+  &__shadow {
+    height: 100%;
+    position: relative;
+    right: 40px;
+    background-image: url(https://assets.nflxext.com/ffe/siteui/akira/fallback/spotlight_gradient.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: "1024px") {
+  .hero {
+    height: 42vh;
+    grid-template-columns: repeat(3, minMax(100px, 340px));
+    &__video {
+      display: none;
+    }
+    &-background-dark,
+    &-background-img {
+      display: block;
+    }
+    &__logo {
+      display: none;
+    }
+    &__info {
+      &__synopsis,
+      &__title,
+      &__details {
+        line-height: 18rem;
+      }
+      &__title h2 {
+        font-size: 20rem;
+        margin-top: 10px;
+        margin-bottom: 4px;
+      }
+      &__synopsis {
+        font-size: 13rem;
+        margin-bottom: 20rem;
+      }
+      &__details {
+        display: flex;
+        margin-bottom: 13rem;
+      }
+    }
+  }
+  .hero__controls {
+    align-self: start;
+    &__play,
+    &__moreInfo {
+      text-transform: uppercase;
+      color: white;
+      padding: 7rem 18rem;
+      font-size: 13rem;
+      border-radius: 0px;
+      .material-icons {
+        display: none;
+      }
+    }
+    &__play {
+      background: #e50914;
+      border: 1px solid #ff0a16;
+      span {
+        color: $--primary-font-color;
+      }
+    }
+    &__moreInfo {
+      border: 1px solid $--secondary-font-color;
+      background: transparent;
+    }
+  }
+  div.hero__controls__player {
+    display: none;
+  }
+}
+
+@media screen and (max-width: "680px") {
+  .hero__info {
+    grid-column: 1 / 3;
   }
 }

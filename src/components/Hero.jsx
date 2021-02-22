@@ -3,7 +3,7 @@ import testVideo from "../assets/videos/test-video-2.mp4";
 const posterVideo =
   "https://occ-0-29-987.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSFemv1LOz5nHsQa6TrW1N_yyCOIMa11goJH_f_n4XAt6ygtncHEo16ESfZDWHHyKC5_E3tnh-2bD6oYBXbjqxb8MOOB.jpg?r=360";
 const Hero = () => {
-  const [buttonIcon, setButtonIcon] = useState("volume_up");
+  const [buttonIcon, setButtonIcon] = useState("volume_off");
   const heroPlayer = useRef(null);
 
   useEffect(() => autoPlay(), []);
@@ -42,11 +42,13 @@ const Hero = () => {
 
   return (
     <section className="hero">
+      <div className="hero-background-dark"></div>
       <video
         ref={heroPlayer}
         onEnded={handleReplay}
         poster={posterVideo}
         className="hero__video"
+        muted
       >
         <source src={testVideo} type="video/mp4" />
       </video>
@@ -58,11 +60,16 @@ const Hero = () => {
           />
         </picture>
       </div>
-      <article className="hero__synopsis">
-        <div className="hero__synopsis__title">
+      <article className="hero__info">
+        <div className="hero__info__title">
           <h2>N.º 8 en México hoy</h2>
         </div>
-        <div className="hero__synopsis__description">
+        <div className="hero__info__details">
+          <p>2021</p>
+          <p>TV-MA</p>
+          <p>1 temporada</p>
+        </div>
+        <div className="hero__info__synopsis">
           <p>
             Buscaba respuestas sobre ella misma, pero terminó encontrando algo
             más oscuro en un escalofriante hotel de Los Ángeles.
@@ -75,7 +82,7 @@ const Hero = () => {
             <i className="material-icons">play_arrow</i>
             <span>Reproducir</span>
           </button>
-          <button className="hero__controls__info">
+          <button className="hero__controls__moreInfo">
             <i className="material-icons">info</i>
             <span>Más información</span>
           </button>
@@ -87,6 +94,10 @@ const Hero = () => {
           <span>TV-MA</span>
         </div>
       </div>
+      <picture className="hero-background-img">
+        <div className="hero-background-img__shadow"></div>
+        <img src={posterVideo} alt="poster de la serie en el hero"></img>
+      </picture>
     </section>
   );
 };
