@@ -74,6 +74,9 @@
 }
 
 @media screen and (max-width: "767px") {
+  .carousel__title {
+    margin-bottom: -20px;
+  }
   .carousel__container {
     .items-container {
       min-height: 0;
