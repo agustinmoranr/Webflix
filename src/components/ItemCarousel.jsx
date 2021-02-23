@@ -1,7 +1,7 @@
 import React from "react";
 // import testVideo from "../assets/videos/test-video-2.mp4";
 
-const imgPath = "http://image.tmdb.org/t/p/w300";
+const imgPath = "https://image.tmdb.org/t/p/w300";
 const ItemCarousel = (props) => {
   return (
     <div className="item-carousel">

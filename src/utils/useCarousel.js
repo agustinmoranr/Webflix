@@ -22,20 +22,20 @@ const useCarousel = (length) => {
   function handleNextContent(e) {
     e.preventDefault();
     if (transitioning) return;
-    const carousel = carouselRef.current;
-    console.log(carousel.offsetWidth);
+    // const carousel = carouselRef.current;
+    // console.log(carousel.offsetWidth);
     const itemsContainer = itemsContainerRef.current;
-    console.log("itemContainer", itemsContainer);
-    console.log("scroll position start", itemsContainer.scrollLeft);
+    // console.log("itemContainer", itemsContainer);
+    // console.log("scroll position start", itemsContainer.scrollLeft);
     /*eslint no-self-compare: 0*/
     if (itemsContainer.scrollLeft === itemsContainer.scrollLeft)
       itemsContainer.scrollLeft = 0;
     itemsContainer.scrollLeft += itemsContainer.offsetWidth;
-    console.log("scroll quantity", itemsContainer.offsetWidth);
-    console.log(
-      "scroll position end",
-      (itemsContainer.scrollLeft += itemsContainer.offsetWidth)
-    );
+    // console.log("scroll quantity", itemsContainer.offsetWidth);
+    // console.log(
+    //   "scroll position end",
+    //   (itemsContainer.scrollLeft += itemsContainer.offsetWidth)
+    // );
     setTransitioning(true);
 
     setTimeout(() => {
@@ -46,15 +46,15 @@ const useCarousel = (length) => {
   function handlePreviousContent() {
     if (transitioning) return;
     const itemsContainer = itemsContainerRef.current;
-    console.log("itemContainer", itemsContainer);
-    console.log("scroll position start", itemsContainer.scrollLeft);
+    // console.log("itemContainer", itemsContainer);
+    // console.log("scroll position start", itemsContainer.scrollLeft);
 
     itemsContainer.scrollLeft -= itemsContainer.offsetWidth;
-    console.log("scroll quantity", itemsContainer.offsetWidth);
-    console.log(
-      "scroll position end",
-      (itemsContainer.scrollLeft -= itemsContainer.offsetWidth)
-    );
+    //console.log("scroll quantity", itemsContainer.offsetWidth);
+    // console.log(
+    //   "scroll position end",
+    //   (itemsContainer.scrollLeft -= itemsContainer.offsetWidth)
+    // );
 
     setTransitioning(true);
     setTimeout(() => {
