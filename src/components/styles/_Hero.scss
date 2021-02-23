@@ -234,3 +234,8 @@
     grid-column: 1 / 3;
   }
 }
+@media screen and (max-width: "480px") {
+  .hero-background-img {
+    grid-column: 1 / -1;
+  }
+}

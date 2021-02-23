@@ -1,15 +1,15 @@
 .item-carousel {
-  width: 293px;
+  min-width: 16.6%;
   height: fit-content;
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 0 2px;
-  // border: 1px solid red;
+  border: 1px solid red;
   transition: 450ms all;
 
   &__wrapper {
-    width: inherit;
+    width: 100%;
   }
   &:first-child {
     -webkit-transform-origin: center left;
@@ -23,6 +23,8 @@
       vertical-align: top;
       border-radius: 4px;
       object-position: 0% 99%;
+      // min-height: 80px;
+      // max-width: 165px;
       @include images(inherit, inherit, cover);
     }
   }
@@ -53,6 +55,8 @@
       }
     }
     &__info {
+      display: flex;
+      flex-wrap: wrap;
       margin: 10px 0;
 
       .info__recomendation {
@@ -67,16 +71,20 @@
       }
     }
 
-    &__categories span {
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
-      &::before {
-        content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-        color: $--third-color; /* Change the color */
-        font-weight: bold; /* If you want it to be bold */
-        display: inline-block; /* Needed to add space between the bullet and the text */
-        width: 12rem; /* Also needed for space (tweak if needed) */
+    &__categories {
+      display: flex;
+      flex-wrap: wrap;
+      span {
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+        &::before {
+          content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: $--third-color; /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 12rem; /* Also needed for space (tweak if needed) */
+        }
       }
     }
   }
@@ -90,3 +98,54 @@
     }
   }
 }
+
+@media screen and(max-width: "1440px") {
+  .item-carousel {
+    min-width: 20%;
+    &__details {
+      &__controls {
+        li.material-icons,
+        button.material-icons {
+          font-size: 34rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: "1024px") {
+  .item-carousel {
+    min-width: 30%;
+  }
+}
+
+@media screen and(max-width: "767px") {
+  .item-carousel {
+    // min-width: 46%;
+    &__img {
+      height: 120px;
+    }
+    &:hover {
+      .item-carousel__details {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: "480px") {
+  .item-carousel {
+    min-width: 46%;
+
+    &__img {
+      height: 100px;
+    }
+  }
+}
+// @media screen and (min-width: "320px") {
+//   .item-carousel {
+//     &__img {
+//       height: 100px;
+//     }
+//   }
+// }

@@ -6,9 +6,9 @@ const ItemCarousel = (props) => {
   return (
     <div className="item-carousel">
       <div className="item-carousel__wrapper">
-        <div className="item-carousel__img">
+        <picture className="item-carousel__img">
           <img src={`${imgPath}${props.poster_path}`} alt="" />
-        </div>
+        </picture>
         <div className="item-carousel__details">
           <div className="item-carousel__details__controls">
             <ul>
