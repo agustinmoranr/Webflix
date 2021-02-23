@@ -73,7 +73,7 @@ function App() {
           <p>Loading...</p>
         )}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

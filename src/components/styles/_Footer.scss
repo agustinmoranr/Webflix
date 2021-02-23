@@ -36,3 +36,14 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .footer {
+    &__social-links {
+      text-align: center;
+    }
+    &__contact-links {
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+}
