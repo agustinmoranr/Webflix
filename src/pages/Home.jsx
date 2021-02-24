@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import "./styles/Home.scss";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -6,12 +6,15 @@ import Carousel from "../components/Carousel";
 import ItemCarousel from "../components/ItemCarousel";
 import Footer from "../components/Footer";
 
-function App() {
+const LS_KEY = "netflixApp.carousel.myList";
+export const myListContext = createContext();
+
+export default function App() {
   const [movies, setMovies] = useState({
-    miLista: [],
     tendencias: [],
     originals: [],
   });
+  const [myList, setMyList] = useState([]);
 
   useEffect(() => {
     async function getMovies() {
@@ -26,7 +29,6 @@ function App() {
         const reversed = [...results];
         setMovies({
           tendencias: results,
-          miLista: [],
           originals: reversed.reverse(),
         });
       } catch (error) {
@@ -35,47 +37,55 @@ function App() {
     }
     getMovies();
   }, []);
+  useEffect(() => getMyListFromLS(), []);
+  useEffect(() => {
+    localStorage.setItem(LS_KEY, JSON.stringify(myList));
+  }, [myList]);
+  function getMyListFromLS() {
+    const LS_MyList = JSON.parse(localStorage.getItem(LS_KEY));
+    if (LS_MyList) setMyList(LS_MyList);
+  }
 
   return (
     <>
       <Header />
       <Hero />
-      <main className="home-content">
-        {movies.miLista.length > 0 ? (
-          <Carousel title="Mi Lista" length={movies.miLista.length}>
-            {movies.miLista.map((movie, index) => (
-              <ItemCarousel key={movie.id} {...movie} />
-            ))}
-          </Carousel>
-        ) : (
-          <div></div>
-        )}
+      <myListContext.Provider value={{ myList, setMyList, LS_KEY }}>
+        <main className="home-content">
+          {myList.length > 0 ? (
+            <Carousel title="Mi Lista" length={myList.length}>
+              {myList.map((movie, index) => (
+                <ItemCarousel key={movie.id} index={index} {...movie} />
+              ))}
+            </Carousel>
+          ) : (
+            <div></div>
+          )}
 
-        {movies.tendencias.length > 0 ? (
-          <Carousel title="Tendencias" length={movies.tendencias.length}>
-            {movies.tendencias.map((movie, index) => (
-              <ItemCarousel key={movie.id} {...movie} />
-            ))}
-          </Carousel>
-        ) : (
-          <p>Loading</p>
-        )}
-        {movies.originals.length > 0 ? (
-          <Carousel
-            title="Originales de Netflix"
-            length={movies.originals.length}
-          >
-            {movies.originals.map((movie, index) => (
-              <ItemCarousel key={index} {...movie} />
-            ))}
-          </Carousel>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </main>
+          {movies.tendencias.length > 0 ? (
+            <Carousel title="Tendencias" length={movies.tendencias.length}>
+              {movies.tendencias.map((movie, index) => (
+                <ItemCarousel key={movie.id} {...movie} />
+              ))}
+            </Carousel>
+          ) : (
+            <p>Loading</p>
+          )}
+          {movies.originals.length > 0 ? (
+            <Carousel
+              title="Originales de Netflix"
+              length={movies.originals.length}
+            >
+              {movies.originals.map((movie, index) => (
+                <ItemCarousel key={index} {...movie} />
+              ))}
+            </Carousel>
+          ) : (
+            <p>Loading...</p>
+          )}
+        </main>
+      </myListContext.Provider>
       <Footer />
     </>
   );
 }
-
-export default App;

@@ -1,8 +1,52 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { myListContext } from "../pages/Home";
 // import testVideo from "../assets/videos/test-video-2.mp4";
 
 const imgPath = "https://image.tmdb.org/t/p/w300";
 const ItemCarousel = (props) => {
+  const [itemExistence, setItemExistence] = useState();
+  const { myList, setMyList } = useContext(myListContext);
+  useEffect(() => {
+    function myListItemExistence() {
+      const exist = myList.find((item) => item.id === props.id);
+
+      //if item does exist return true, if not false
+      if (exist !== undefined) {
+        return true;
+      }
+      return false;
+    }
+    setItemExistence(myListItemExistence());
+  }, [myList, props.id]);
+
+  function handleAddMyList() {
+    // const exist = myListItemExistence();
+    // if (exist) {
+    //   return false;
+    // }
+    setMyList((prevItems) => {
+      return [
+        ...prevItems,
+        {
+          id: props.id,
+          poster_path: props.poster_path,
+        },
+      ];
+    });
+  }
+  function handleDeleteMyListItem() {
+    // const exist = myListItemExistence();
+    // if (!exist) {
+    //   return false;
+    // }
+
+    const myListCopy = [...myList];
+
+    const newList = myListCopy.filter((item) => item.id !== props.id);
+
+    setMyList(newList);
+  }
+
   return (
     <div className="item-carousel">
       <div className="item-carousel__wrapper">
@@ -12,10 +56,25 @@ const ItemCarousel = (props) => {
         <div className="item-carousel__details">
           <div className="item-carousel__details__controls">
             <ul>
-              <li className="material-icons">play_circle</li>
-              <li className="material-icons">add_circle_outline</li>
-              <li className="material-icons">thumb_up_off_alt</li>
-              <li className="material-icons">thumb_down_off_alt</li>
+              <li>
+                <button className="material-icons">play_circle</button>
+              </li>
+              <li>
+                <button
+                  onClick={
+                    itemExistence ? handleDeleteMyListItem : handleAddMyList
+                  }
+                  className="material-icons"
+                >
+                  {itemExistence ? "delete_outline" : "add_circle_outline"}
+                </button>
+              </li>
+              <li>
+                <button className="material-icons">thumb_up_off_alt</button>
+              </li>
+              <li>
+                <button className="material-icons">thumb_down_off_alt</button>
+              </li>
             </ul>
             <button className="material-icons show-more">expand_more</button>
           </div>

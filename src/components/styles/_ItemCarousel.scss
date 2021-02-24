@@ -39,7 +39,9 @@
       display: flex;
       justify-content: space-between;
 
-      li.material-icons,
+      ul {
+        display: flex;
+      }
       button.material-icons {
         position: relative;
         visibility: visible;
