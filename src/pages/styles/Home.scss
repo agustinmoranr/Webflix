@@ -1,18 +1,19 @@
-@import "../../index.scss";
-@import "../../components/styles/Header";
-@import "../../components/styles/Hero";
-@import "../../components/styles/ItemCarousel";
-@import "../../components/styles/Carousel";
-@import "../../components/styles/Footer";
+@import '../../index.scss';
+@import '../../components/styles/Header';
+@import '../../components/styles/Hero';
+@import '../../components/styles/ItemCarousel';
+@import '../../components/styles/ItemCarouselPreview';
+@import '../../components/styles/ItemCarouselDetails';
+@import '../../components/styles/Carousel';
+@import '../../components/styles/Footer';
 
 .home-content {
-  position: relative;
-  top: -150px;
+	position: relative;
+	top: -150px;
 }
-
-@media screen and (max-width: "1024px") {
-  .home-content {
-    top: 0;
-    margin-top: 30px;
-  }
+@media screen and (max-width: '1024px') {
+	.home-content {
+		top: 0;
+		margin-top: 30px;
+	}
 }

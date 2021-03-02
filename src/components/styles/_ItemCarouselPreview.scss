@@ -1,0 +1,13 @@
+.item-carousel__img {
+	width: 100%;
+	height: 165px;
+	display: block;
+	img {
+		vertical-align: top;
+		border-radius: 4px;
+		object-position: 0% 99%;
+		// min-height: 80px;
+		// max-width: 165px;
+		@include images(inherit, inherit, cover);
+	}
+}

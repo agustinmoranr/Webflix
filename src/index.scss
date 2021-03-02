@@ -1,51 +1,52 @@
 $--primary-color: #141414;
+$--secondary-color: #181818;
+$--third-color: #595959;
 $--primary-font-color: #ffffff;
 $--secondary-font-color: #e5e5e5;
 $--third-font-color: #46d369;
-$--third-color: #595959;
 
 @mixin images($height: 100%, $width: 100%, $object-fit: cover) {
-  height: $height;
-  width: $width;
-  object-fit: $object-fit;
+	height: $height;
+	width: $width;
+	object-fit: $object-fit;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  color: $--primary-font-color;
+	margin: 0;
+	padding: 0;
+	color: $--primary-font-color;
 }
 
 html {
-  font-size: 6.25%;
+	font-size: 6.25%;
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16rem;
-  background-color: $--primary-color;
+	font-family: 'Lato', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 16rem;
+	background-color: $--primary-color;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
 a {
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
 }
 
 button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: none;
 }
