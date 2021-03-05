@@ -30,6 +30,13 @@ $--third-font-color: #46d369;
 	z-index: 1000;
 }
 
+@mixin rectangularButton($padding, $font-size, $border-radius, $background) {
+	padding: $padding;
+	font-size: $font-size;
+	border-radius: $border-radius;
+	background-color: $background;
+}
+
 * {
 	margin: 0;
 	padding: 0;
