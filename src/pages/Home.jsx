@@ -1,11 +1,11 @@
-import React, {useState, useEffect, createContext} from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import './styles/Home.scss';
 import Layout from '../components/Layout.jsx';
 // import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Carousel from '../components/Carousel';
+import Modal from '../components/Modal';
 import ItemCarousel from '../components/ItemCarousel';
-// import Footer from '../components/Footer';
 import ItemModal from '../components/ItemModal';
 
 const LS_KEY = 'netflixApp.carousel.myList';
@@ -51,13 +51,17 @@ export default function App() {
 
 	return (
 		<>
-			{isOpen && <ItemModal onClose={() => setIsOpen(false)} />}
+			{isOpen && (
+				<Modal>
+					<ItemModal onClose={() => setIsOpen(false)} />
+				</Modal>
+			)}
 			<Layout position={isOpen ? 'fixed' : 'static'}>
 				<Hero />
-				<myListContext.Provider value={{myList, setMyList, LS_KEY}}>
-					<main className="home-content">
+				<myListContext.Provider value={{ myList, setMyList, LS_KEY }}>
+					<main className='home-content'>
 						{myList.length > 0 ? (
-							<Carousel title="Mi Lista" length={myList.length}>
+							<Carousel title='Mi Lista' length={myList.length}>
 								{myList.map((movie, index) => (
 									<ItemCarousel
 										key={movie.id}
@@ -71,7 +75,7 @@ export default function App() {
 						)}
 
 						{movies.tendencias.length > 0 ? (
-							<Carousel title="Tendencias" length={movies.tendencias.length}>
+							<Carousel title='Tendencias' length={movies.tendencias.length}>
 								{movies.tendencias.map((movie, index) => (
 									<ItemCarousel
 										key={movie.id}
@@ -85,9 +89,8 @@ export default function App() {
 						)}
 						{movies.originals.length > 0 ? (
 							<Carousel
-								title="Originales de Netflix"
-								length={movies.originals.length}
-							>
+								title='Originales de Netflix'
+								length={movies.originals.length}>
 								{movies.originals.map((movie, index) => (
 									<ItemCarousel
 										key={index}
