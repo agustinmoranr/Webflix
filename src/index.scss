@@ -36,6 +36,18 @@ $--third-font-color: #46d369;
 	border-radius: $border-radius;
 	background-color: $background;
 }
+@mixin roundedButton(
+	$icon-color,
+	$border-weight: 1px,
+	$border-color: #e5e5e5,
+	$size-icon: 22rem
+) {
+	padding: 6rem;
+	color: $icon-color;
+	border: $border-weight solid $border-color;
+	border-radius: 50%;
+	font-size: $size-icon;
+}
 
 * {
 	margin: 0;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import RoundedButton from './RoundedButton';
 import { myListContext } from '../pages/Home';
 
 const ItemCarouselDetails = ({ props }) => {
@@ -50,25 +51,22 @@ const ItemCarouselDetails = ({ props }) => {
 			<div className='item-carousel__details__controls'>
 				<ul>
 					<li>
-						<button className='material-icons'>play_arrow</button>
+						<RoundedButton icon='play_arrow' />
 					</li>
 					<li>
-						<button
-							onClick={itemExistence ? handleDeleteMyListItem : handleAddMyList}
-							className='material-icons'>
-							{itemExistence ? 'delete_outline' : 'add'}
-						</button>
+						<RoundedButton
+							icon={itemExistence ? 'delete_outline' : 'add'}
+							action={itemExistence ? handleDeleteMyListItem : handleAddMyList}
+						/>
 					</li>
 					<li>
-						<button className='material-icons'>thumb_up_off_alt</button>
+						<RoundedButton icon='thumb_up_off_alt' />
 					</li>
 					<li>
-						<button className='material-icons'>thumb_down_off_alt</button>
+						<RoundedButton icon='thumb_down_off_alt' />
 					</li>
 				</ul>
-				<button className='material-icons show-more' onClick={props.onOpen}>
-					expand_more
-				</button>
+				<RoundedButton icon='expand_more' action={props.onOpen} />
 			</div>
 
 			<p className='item-carousel__details__info'>

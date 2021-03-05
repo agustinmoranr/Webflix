@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 // import './styles/RectangularButton.scss';
 import RectangularButton from './RectangularButton';
+import RoundedButton from './RoundedButton';
 import testVideo from '../assets/videos/test-video-2.mp4';
 const posterVideo =
 	'https://occ-0-29-987.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSFemv1LOz5nHsQa6TrW1N_yyCOIMa11goJH_f_n4XAt6ygtncHEo16ESfZDWHHyKC5_E3tnh-2bD6oYBXbjqxb8MOOB.jpg?r=360';
@@ -92,9 +93,7 @@ const Hero = () => {
 					/>
 				</div>
 				<div className='hero__controls__player'>
-					<button onClick={handleIcon} className='material-icons'>
-						{buttonIcon}
-					</button>
+					<RoundedButton icon={buttonIcon} action={handleIcon} />
 					<span>TV-MA</span>
 				</div>
 			</div>

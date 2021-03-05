@@ -1,0 +1,12 @@
+.rounded-button {
+	@include roundedButton(
+		$--primary-font-color,
+		1px,
+		$--secondary-font-color,
+		22rem
+	);
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
