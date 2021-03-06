@@ -82,6 +82,15 @@
 				font-weight: 600;
 			}
 		}
+		&-play {
+			span,
+			.material-icons {
+				color: $--primary-color;
+			}
+		}
+		&-more-info {
+			background: rgba($--third-color, 0.7);
+		}
 	}
 
 	&__player {
@@ -184,27 +193,26 @@
 	}
 	.hero__controls {
 		align-self: start;
-		&__play,
-		&__moreInfo {
-			text-transform: uppercase;
-			color: white;
-			padding: 7rem 18rem;
-			font-size: 13rem;
-			border-radius: 0px;
-			.material-icons {
-				display: none;
+		&__wrapper {
+			&-play,
+			&-more-info {
+				color: white;
+				.material-icons {
+					display: none;
+				}
 			}
-		}
-		&__play {
-			background: #e50914;
-			border: 1px solid #ff0a16;
-			span {
-				color: $--primary-font-color;
+			&-play {
+				// color: white;
+				background: #e50914;
+				border: 1px solid #ff0a16;
+				span {
+					color: $--primary-font-color;
+				}
 			}
-		}
-		&__moreInfo {
-			border: 1px solid $--secondary-font-color;
-			background: transparent;
+			&-more-info {
+				border: 1px solid $--secondary-font-color;
+				background: transparent;
+			}
 		}
 	}
 	div.hero__controls__player {

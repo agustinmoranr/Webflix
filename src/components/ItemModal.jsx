@@ -6,7 +6,7 @@ import ItemModalSimilars from './ItemModalSimilars';
 import ItemModalRelated from './ItemModalRelated';
 import ItemModalFooter from './ItemModalFooter';
 
-const ItemModal = ({ onClose }) => {
+const ItemModal = ({ onClose, heroData, modalItemProps }) => {
 	return (
 		<article className='itemModal'>
 			<div className='itemModal__overlay' />
@@ -14,7 +14,7 @@ const ItemModal = ({ onClose }) => {
 				<button className='close-btn material-icons' onClick={onClose}>
 					close
 				</button>
-				<ItemModalHero />
+				<ItemModalHero heroData={heroData} modalItemProps={modalItemProps} />
 				<ItemModalDetails />
 				<ItemModalEpisodes />
 				<ItemModalSimilars />

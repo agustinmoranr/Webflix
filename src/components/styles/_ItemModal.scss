@@ -25,7 +25,14 @@
 		z-index: 1000;
 	}
 	.close-btn {
-		@include modalCloseButton(36px, 36px, 50%, white, black);
+		// border: 1px solid $--secondary-font-color;
+		@include modalCloseButton(
+			36px,
+			36px,
+			50%,
+			$--primary-color,
+			$--primary-font-color
+		);
 	}
 }
 .itemModal__container {

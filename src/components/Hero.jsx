@@ -1,47 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 // import './styles/RectangularButton.scss';
+import useHeroPlayer from '../utils/useHeroPlayer';
 import RectangularButton from './RectangularButton';
 import RoundedButton from './RoundedButton';
-import testVideo from '../assets/videos/test-video-2.mp4';
-const posterVideo =
-	'https://occ-0-29-987.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSFemv1LOz5nHsQa6TrW1N_yyCOIMa11goJH_f_n4XAt6ygtncHEo16ESfZDWHHyKC5_E3tnh-2bD6oYBXbjqxb8MOOB.jpg?r=360';
-const Hero = () => {
-	const [buttonIcon, setButtonIcon] = useState('volume_off');
-	const heroPlayer = useRef(null);
 
-	useEffect(() => autoPlay(), []);
-	function autoPlay() {
-		setTimeout(() => {
-			return heroPlayer.current.play();
-		}, 3000);
-	}
-	function handleReplay(e) {
-		e.preventDefault();
-		let mediaBtnCopy = buttonIcon;
-		mediaBtnCopy = 'replay';
-		setButtonIcon(mediaBtnCopy);
-	}
-	function toggleMute(icon) {
-		let mediaBtnCopy = buttonIcon;
-		if (icon === 'volume_off') {
-			mediaBtnCopy = 'volume_up';
-		}
-		if (icon === 'volume_up') {
-			mediaBtnCopy = 'volume_off';
-		}
-		if (icon === 'replay') {
-			heroPlayer.current.play();
-			mediaBtnCopy = 'volume_off';
-			setButtonIcon(mediaBtnCopy);
-			return (heroPlayer.current.muted = true);
-		}
-		setButtonIcon(mediaBtnCopy);
-		return (heroPlayer.current.muted = !heroPlayer.current.muted);
-	}
-	function handleIcon(e) {
-		e.preventDefault();
-		return toggleMute(buttonIcon);
-	}
+const Hero = ({ heroData }) => {
+	const { video, posterVideo, logoSerie } = heroData;
+	const [buttonIcon, setButtonIcon] = useState('volume_off');
+
+	const { heroPlayer, handleReplay, handleIcon } = useHeroPlayer(
+		buttonIcon,
+		setButtonIcon,
+	);
 
 	return (
 		<section className='hero'>
@@ -52,14 +22,11 @@ const Hero = () => {
 				poster={posterVideo}
 				className='hero__video'
 				muted>
-				<source src={testVideo} type='video/mp4' />
+				<source src={video} type='video/mp4' />
 			</video>
 			<div className='hero__logo'>
 				<picture>
-					<img
-						src='https://occ-0-29-987.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABU0SsrQ7stPoG2alvtMW7Ud2UBI0AaPTTRG4Eg2xIzpkIoyLTJ9Eex53bwwu024ZIehu-Ki18X2Dkv81zEIgvKwLHrH0387wbBS0kGqFtjrzGgVflZOL-RNgiUuFU69DwRLjDgYw8l9vOfYQUfOBwyJY3bICasoIccy3xz0joL3gLw.png?r=900'
-						alt=''
-					/>
+					<img src={logoSerie} alt='logo de la seríe' />
 				</picture>
 			</div>
 			<article className='hero__info'>
@@ -83,13 +50,13 @@ const Hero = () => {
 					<RectangularButton
 						icon='play_arrow'
 						text='Reproducir'
-						color='#141414'
+						className='hero__controls__wrapper-play'
 					/>
 
 					<RectangularButton
 						icon='info'
 						text='Más información'
-						background='#595959'
+						className='hero__controls__wrapper-more-info'
 					/>
 				</div>
 				<div className='hero__controls__player'>

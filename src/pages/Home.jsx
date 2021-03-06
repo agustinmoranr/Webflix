@@ -1,13 +1,21 @@
 import React, { useState, useEffect, createContext } from 'react';
 import './styles/Home.scss';
 import Layout from '../components/Layout.jsx';
-// import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Carousel from '../components/Carousel';
 import Modal from '../components/Modal';
 import ItemCarousel from '../components/ItemCarousel';
 import ItemModal from '../components/ItemModal';
 
+import testVideo from '../assets/videos/test-video-2.mp4';
+
+const heroData = {
+	video: testVideo,
+	posterVideo:
+		'https://occ-0-29-987.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSFemv1LOz5nHsQa6TrW1N_yyCOIMa11goJH_f_n4XAt6ygtncHEo16ESfZDWHHyKC5_E3tnh-2bD6oYBXbjqxb8MOOB.jpg?r=360',
+	logoSerie:
+		'https://occ-0-29-987.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABU0SsrQ7stPoG2alvtMW7Ud2UBI0AaPTTRG4Eg2xIzpkIoyLTJ9Eex53bwwu024ZIehu-Ki18X2Dkv81zEIgvKwLHrH0387wbBS0kGqFtjrzGgVflZOL-RNgiUuFU69DwRLjDgYw8l9vOfYQUfOBwyJY3bICasoIccy3xz0joL3gLw.png?r=900',
+};
 const LS_KEY = 'netflixApp.carousel.myList';
 export const myListContext = createContext();
 
@@ -18,6 +26,7 @@ export default function App() {
 	});
 	const [myList, setMyList] = useState([]);
 	const [isOpen, setIsOpen] = useState(false);
+	const [modalItemProps, setModalItemProps] = useState({});
 
 	useEffect(() => {
 		async function getMovies() {
@@ -49,16 +58,24 @@ export default function App() {
 		if (LS_MyList) setMyList(LS_MyList);
 	}
 
+	function getItem(props) {
+		setModalItemProps(props);
+		setIsOpen(true);
+	}
 	return (
 		<>
-			{isOpen && (
-				<Modal>
-					<ItemModal onClose={() => setIsOpen(false)} />
-				</Modal>
-			)}
-			<Layout position={isOpen ? 'fixed' : 'static'}>
-				<Hero />
-				<myListContext.Provider value={{ myList, setMyList, LS_KEY }}>
+			<myListContext.Provider value={{ myList, setMyList, LS_KEY }}>
+				{isOpen && (
+					<Modal>
+						<ItemModal
+							modalItemProps={modalItemProps}
+							onClose={() => setIsOpen(false)}
+							heroData={heroData}
+						/>
+					</Modal>
+				)}
+				<Layout position={isOpen ? 'fixed' : 'static'}>
+					<Hero heroData={heroData} />
 					<main className='home-content'>
 						{myList.length > 0 ? (
 							<Carousel title='Mi Lista' length={myList.length}>
@@ -66,7 +83,8 @@ export default function App() {
 									<ItemCarousel
 										key={movie.id}
 										{...movie}
-										onOpen={() => setIsOpen(true)}
+										// onOpen={() => setIsOpen(true)}
+										onOpen={getItem}
 									/>
 								))}
 							</Carousel>
@@ -80,7 +98,8 @@ export default function App() {
 									<ItemCarousel
 										key={movie.id}
 										{...movie}
-										onOpen={() => setIsOpen(true)}
+										// onOpen={() => setIsOpen(true)}
+										onOpen={getItem}
 									/>
 								))}
 							</Carousel>
@@ -95,7 +114,8 @@ export default function App() {
 									<ItemCarousel
 										key={index}
 										{...movie}
-										onOpen={() => setIsOpen(true)}
+										// onOpen={() => setIsOpen(true)}
+										onOpen={getItem}
 									/>
 								))}
 							</Carousel>
@@ -103,8 +123,8 @@ export default function App() {
 							<p>Loading...</p>
 						)}
 					</main>
-				</myListContext.Provider>
-			</Layout>
+				</Layout>
+			</myListContext.Provider>
 		</>
 	);
 }
