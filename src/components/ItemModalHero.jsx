@@ -4,6 +4,8 @@ import useHeroPlayer from '../utils/useHeroPlayer';
 import RectangularButton from './RectangularButton';
 import RoundedButton from './RoundedButton';
 
+const imgPath = 'https://image.tmdb.org/t/p/w780';
+
 const ItemModalHero = ({ heroData, modalItemProps }) => {
 	const { video, posterVideo, logoSerie } = heroData;
 	const [buttonIcon, setButtonIcon] = useState('volume_off');
@@ -21,7 +23,7 @@ const ItemModalHero = ({ heroData, modalItemProps }) => {
 			<video
 				ref={heroPlayer}
 				onEnded={handleReplay}
-				poster={posterVideo}
+				poster={`${imgPath}${modalItemProps.poster_path}`}
 				className='modal-hero__video'
 				muted>
 				<source src={video} type='video/mp4' />
