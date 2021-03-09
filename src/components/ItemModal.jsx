@@ -7,7 +7,7 @@ import ItemModalSimilars from './ItemModalSimilars';
 import ItemModalRelated from './ItemModalRelated';
 import ItemModalFooter from './ItemModalFooter';
 
-const ItemModal = ({ onClose, heroData, modalItemProps }) => {
+const ItemModal = ({ onClose, heroData, modalItemProps, movies }) => {
 	return (
 		<article className='itemModal'>
 			<div className='itemModal__overlay' />
@@ -18,7 +18,7 @@ const ItemModal = ({ onClose, heroData, modalItemProps }) => {
 				<ItemModalHero heroData={heroData} modalItemProps={modalItemProps} />
 				<ItemModalWrapper>
 					<ItemModalDetails modalItemProps={modalItemProps} />
-					<ItemModalEpisodes />
+					<ItemModalEpisodes movies={movies} />
 					<ItemModalSimilars />
 					<ItemModalRelated />
 					<ItemModalFooter />

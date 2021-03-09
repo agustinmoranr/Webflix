@@ -203,6 +203,10 @@
 			}
 			&-play {
 				// color: white;
+				text-transform: uppercase;
+				padding: 7rem 18rem;
+				font-size: 13rem;
+				border-radius: 0px;
 				background: #e50914;
 				border: 1px solid #ff0a16;
 				span {
@@ -210,6 +214,10 @@
 				}
 			}
 			&-more-info {
+				text-transform: uppercase;
+				padding: 7rem 18rem;
+				font-size: 13rem;
+				border-radius: 0px;
 				border: 1px solid $--secondary-font-color;
 				background: transparent;
 			}

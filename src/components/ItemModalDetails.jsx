@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ItemModalDetails = ({ modalItemProps }) => {
-	console.log(modalItemProps);
 	const { overview } = modalItemProps;
 	return (
 		<section className='modal-details'>

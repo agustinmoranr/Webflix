@@ -71,6 +71,7 @@ export default function App() {
 							modalItemProps={modalItemProps}
 							onClose={() => setIsOpen(false)}
 							heroData={heroData}
+							movies={movies.originals}
 						/>
 					</Modal>
 				)}
