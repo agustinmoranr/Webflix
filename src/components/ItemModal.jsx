@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemModalWrapper from './ItemModalWrapper';
 import ItemModalHero from './ItemModalHero';
 import ItemModalDetails from './ItemModalDetails';
 import ItemModalEpisodes from './ItemModalEpisodes';
@@ -15,11 +16,13 @@ const ItemModal = ({ onClose, heroData, modalItemProps }) => {
 					close
 				</button>
 				<ItemModalHero heroData={heroData} modalItemProps={modalItemProps} />
-				<ItemModalDetails />
-				<ItemModalEpisodes />
-				<ItemModalSimilars />
-				<ItemModalRelated />
-				<ItemModalFooter />
+				<ItemModalWrapper>
+					<ItemModalDetails modalItemProps={modalItemProps} />
+					<ItemModalEpisodes />
+					<ItemModalSimilars />
+					<ItemModalRelated />
+					<ItemModalFooter />
+				</ItemModalWrapper>
 			</section>
 		</article>
 	);

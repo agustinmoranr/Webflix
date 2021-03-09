@@ -29,9 +29,9 @@
 		}
 
 		.info__mature-rating {
-			border: 1px solid $--primary-font-color;
 			margin-right: 8px;
-			padding: 1px;
+			padding: 1rem 6rem;
+			border: 1px solid rgba($--primary-font-color, 0.4);
 		}
 	}
 

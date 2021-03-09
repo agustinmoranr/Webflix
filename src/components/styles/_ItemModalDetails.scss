@@ -1,0 +1,45 @@
+.modal-details {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+	gap: 32rem;
+	padding-top: 14rem;
+	font-size: 18rem;
+
+	&__overview {
+		font-weight: 400;
+		margin-top: 24rem;
+		margin-bottom: 9rem;
+	}
+	&__metadata-left {
+		margin-right: 2vw;
+	}
+	&__metadata-left-main {
+		font-size: 16rem;
+		font-weight: 600;
+		span:not(:last-child) {
+			margin-right: 10rem;
+		}
+	}
+	.metadata-recomendations {
+		color: $--third-font-color;
+	}
+	.metadata-rating {
+		border: 1px solid rgba($--primary-font-color, 0.4);
+		padding: 1rem 6rem;
+	}
+	&__metadata-right {
+		font-size: 15rem;
+		p:not(:last-child) {
+			margin-bottom: 14rem;
+		}
+		&-tag {
+			color: #777;
+		}
+		a {
+			word-break: break-word;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
