@@ -58,9 +58,14 @@ export default function App() {
 		if (LS_MyList) setMyList(LS_MyList);
 	}
 
-	function getItem(props) {
+	function getItemModal(props) {
 		setModalItemProps(props);
 		setIsOpen(true);
+	}
+
+	function cleanItemModal() {
+		setModalItemProps({});
+		setIsOpen(false);
 	}
 	return (
 		<>
@@ -69,7 +74,7 @@ export default function App() {
 					<Modal>
 						<ItemModal
 							modalItemProps={modalItemProps}
-							onClose={() => setIsOpen(false)}
+							onClose={() => cleanItemModal()}
 							heroData={heroData}
 							movies={movies.originals}
 						/>
@@ -85,7 +90,7 @@ export default function App() {
 										key={movie.id}
 										{...movie}
 										// onOpen={() => setIsOpen(true)}
-										onOpen={getItem}
+										onOpen={getItemModal}
 									/>
 								))}
 							</Carousel>
@@ -100,7 +105,7 @@ export default function App() {
 										key={movie.id}
 										{...movie}
 										// onOpen={() => setIsOpen(true)}
-										onOpen={getItem}
+										onOpen={getItemModal}
 									/>
 								))}
 							</Carousel>
@@ -116,7 +121,7 @@ export default function App() {
 										key={index}
 										{...movie}
 										// onOpen={() => setIsOpen(true)}
-										onOpen={getItem}
+										onOpen={getItemModal}
 									/>
 								))}
 							</Carousel>
