@@ -1,8 +1,9 @@
 .metadata {
-	&:not(:last-child) {
-		margin-bottom: 14rem;
-	}
-
+	// &:not(:last-child) {
+	// 	margin-bottom: 14rem;
+	// }
+	margin: 7rem 0;
+	font-size: 15rem;
 	&-link:not(:last-child)::after {
 		content: ', ';
 	}

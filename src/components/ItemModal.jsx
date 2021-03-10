@@ -20,8 +20,8 @@ const ItemModal = ({ onClose, heroData, modalItemProps, movies }) => {
 					<ItemModalDetails modalItemProps={modalItemProps} />
 					<ItemModalEpisodes movies={movies.tendencias} />
 					<ItemModalMoreLikeThis movies={movies.originals} />
-					<ItemModalRelated />
-					<ItemModalFooter />
+					{/* <ItemModalRelated /> */}
+					<ItemModalFooter modalItemProps={modalItemProps} />
 				</ItemModalWrapper>
 			</section>
 		</article>

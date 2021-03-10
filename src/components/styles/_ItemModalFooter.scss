@@ -1,0 +1,35 @@
+.modal-footer {
+	padding-bottom: 32rem;
+	user-select: none;
+	.title-lighter {
+		font-weight: 400;
+	}
+	.maturity-rating-wrapper {
+		display: flex;
+		font-size: 15rem;
+		span {
+			line-height: 20px;
+		}
+		p {
+			margin-right: 14rem;
+			line-height: 22px;
+
+			display: inline-block;
+		}
+		.mature-title {
+			vertical-align: top;
+			color: #777;
+			margin-right: 14rem;
+			white-space: nowrap;
+		}
+		.maturity-rating {
+			display: inline-block;
+		}
+		.maturity-class {
+			padding: 1rem 6rem;
+			text-transform: uppercase;
+			border: solid 1px rgba(255, 255, 255, 0.4);
+			margin-right: 14rem;
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { myListContext } from '../pages/Home';
-const useAddMyList = ({ id, poster_path, overview }) => {
+const useAddMyList = ({ id, poster_path, overview, title }) => {
 	const [itemExistence, setItemExistence] = useState();
 	const { myList, setMyList } = useContext(myListContext);
 	useEffect(() => {
@@ -25,6 +25,7 @@ const useAddMyList = ({ id, poster_path, overview }) => {
 			return [
 				...prevItems,
 				{
+					title: title,
 					id: id,
 					poster_path: poster_path,
 					overview: overview,

@@ -10,6 +10,7 @@ const ItemCarouselDetails = ({ props }) => {
 		handleAddMyList,
 	} = useAddMyList(props);
 	const modalProps = {
+		title: props.title,
 		overview: props.overview,
 		poster_path: props.poster_path,
 		id: props.id,
