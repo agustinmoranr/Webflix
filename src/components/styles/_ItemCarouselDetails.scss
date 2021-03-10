@@ -11,19 +11,9 @@
 
 		ul {
 			display: flex;
-		}
-		button.material-icons {
-			position: relative;
-			visibility: visible;
-			font-size: 44rem;
-			color: $--primary-font-color;
-			border-radius: 50%;
-			&:hover {
-				opacity: 0.7;
+			li:not(:last-child) {
+				margin-right: 8px;
 			}
-		}
-		.show-more {
-			border: 1px solid white;
 		}
 	}
 	&__info {
@@ -37,9 +27,9 @@
 		}
 
 		.info__mature-rating {
-			border: 1px solid $--primary-font-color;
 			margin-right: 8px;
-			padding: 1px;
+			padding: 1rem 6rem;
+			border: 1px solid rgba($--primary-font-color, 0.4);
 		}
 	}
 

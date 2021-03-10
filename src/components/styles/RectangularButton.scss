@@ -1,0 +1,15 @@
+.rectangular-button {
+	@include rectangularButton(12rem 28rem, 22rem, 4rem, $--primary-font-color);
+	i {
+		margin-right: 15px;
+		color: $--primary-color;
+		font-size: 34rem;
+	}
+	span {
+		color: $--primary-color;
+		// font-weight: 600;
+	}
+	&:hover {
+		opacity: 0.7;
+	}
+}

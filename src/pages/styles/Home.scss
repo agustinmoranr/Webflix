@@ -1,4 +1,8 @@
 @import '../../index.scss';
+@import '../../components/styles/Metadata';
+@import '../../components/styles/ModalSectionTitle';
+@import '../../components/styles/RectangularButton';
+@import '../../components/styles/RoundedButton';
 @import '../../components/styles/Header';
 @import '../../components/styles/Hero';
 @import '../../components/styles/ItemCarousel';
@@ -6,6 +10,7 @@
 @import '../../components/styles/ItemCarouselDetails';
 @import '../../components/styles/Carousel';
 @import '../../components/styles/Footer';
+@import '../../components/styles/Modal';
 
 .home-content {
 	position: relative;

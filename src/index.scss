@@ -11,6 +11,47 @@ $--third-font-color: #46d369;
 	object-fit: $object-fit;
 }
 
+@mixin modalCloseButton($width, $heigth, $borderRadius, $background, $color) {
+	width: $width;
+	height: $heigth;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 16px;
+	font-size: 28rem;
+	font-weight: 100;
+	padding: 8px;
+	border-radius: $borderRadius;
+	background: $background;
+	color: $color;
+	z-index: 1000;
+}
+
+@mixin rectangularButton($padding, $font-size, $border-radius, $background) {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $padding;
+	font-size: $font-size;
+	border-radius: $border-radius;
+	background-color: $background;
+}
+@mixin roundedButton(
+	$icon-color,
+	$border-weight: 1px,
+	$border-color: #e5e5e5,
+	$size-icon: 22rem
+) {
+	padding: 6rem;
+	color: $icon-color;
+	border: $border-weight solid $border-color;
+	border-radius: 50%;
+	font-size: $size-icon;
+}
+
 * {
 	margin: 0;
 	padding: 0;
