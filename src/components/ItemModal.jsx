@@ -3,7 +3,7 @@ import ItemModalWrapper from './ItemModalWrapper';
 import ItemModalHero from './ItemModalHero';
 import ItemModalDetails from './ItemModalDetails';
 import ItemModalEpisodes from './ItemModalEpisodes';
-import ItemModalSimilars from './ItemModalSimilars';
+import ItemModalMoreLikeThis from './ItemModalMoreLikeThis';
 import ItemModalRelated from './ItemModalRelated';
 import ItemModalFooter from './ItemModalFooter';
 
@@ -18,8 +18,8 @@ const ItemModal = ({ onClose, heroData, modalItemProps, movies }) => {
 				<ItemModalHero heroData={heroData} modalItemProps={modalItemProps} />
 				<ItemModalWrapper>
 					<ItemModalDetails modalItemProps={modalItemProps} />
-					<ItemModalEpisodes movies={movies} />
-					<ItemModalSimilars />
+					<ItemModalEpisodes movies={movies.tendencias} />
+					<ItemModalMoreLikeThis movies={movies.originals} />
 					<ItemModalRelated />
 					<ItemModalFooter />
 				</ItemModalWrapper>

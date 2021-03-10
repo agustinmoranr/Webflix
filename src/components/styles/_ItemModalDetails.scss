@@ -20,13 +20,7 @@
 			margin-right: 10rem;
 		}
 	}
-	.metadata-recomendations {
-		color: $--third-font-color;
-	}
-	.metadata-rating {
-		border: 1px solid rgba($--primary-font-color, 0.4);
-		padding: 1rem 6rem;
-	}
+
 	&__metadata-right {
 		font-size: 15rem;
 		p:not(:last-child) {
@@ -42,4 +36,11 @@
 			}
 		}
 	}
+}
+.metadata-recomendations {
+	color: $--third-font-color;
+}
+.metadata-rating {
+	border: 1px solid rgba($--primary-font-color, 0.4);
+	padding: 1rem 6rem;
 }
