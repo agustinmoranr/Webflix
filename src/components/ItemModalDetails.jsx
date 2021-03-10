@@ -1,5 +1,21 @@
 import React from 'react';
+import Metadata from './Metadata';
 
+const generos = [
+	{ href: '#/', text: 'TV de ciencia ficción' },
+	{ href: '#/', text: 'Sitcoms' },
+	{ href: '#/', text: 'Comedias de TV' },
+];
+const about = [
+	{ href: '#/', text: 'TV de ciencia ficción' },
+	{ href: '#/', text: 'Sitcoms' },
+	{ href: '#/', text: 'Comedias de TV' },
+];
+const elenco = [
+	{ href: '#/', text: 'TV de ciencia ficción' },
+	{ href: '#/', text: 'Sitcoms' },
+	{ href: '#/', text: 'Comedias de TV' },
+];
 const ItemModalDetails = ({ modalItemProps }) => {
 	const { overview } = modalItemProps;
 	return (
@@ -14,7 +30,7 @@ const ItemModalDetails = ({ modalItemProps }) => {
 				<div className='modal-details__overview'>{overview}</div>
 			</div>
 			<div className='modal-details__metadata-right'>
-				<p>
+				{/* <p>
 					<span className='modal-details__metadata-right-tag'>Elenco: </span>
 					<span>
 						<a href='#/'>Justin Roiland, </a>
@@ -22,16 +38,10 @@ const ItemModalDetails = ({ modalItemProps }) => {
 						<a href='#/'>Spencer Grammer, </a>
 						<a href='#/'>más</a>
 					</span>
-				</p>
-				<p>
-					<span className='modal-details__metadata-right-tag'>Géneros: </span>
-					<span>
-						<a href='#/'>TV de ciencía ficción, </a>
-						<a href='#/'>Sitcoms, </a>
-						<a href='#/'>Comedias de TV</a>
-					</span>
-				</p>
-				<p>
+				</p> */}
+				<Metadata links={elenco} tag='Elenco' />
+				<Metadata links={generos} tag='Géneros' />
+				{/* <p>
 					<span className='modal-details__metadata-right-tag'>
 						Este título es:{' '}
 					</span>
@@ -40,7 +50,8 @@ const ItemModalDetails = ({ modalItemProps }) => {
 						<a href='#/'>Excéntrico, </a>
 						<a href='#/'> Irreverente</a>
 					</span>
-				</p>
+				</p> */}
+				<Metadata links={about} tag='Este título es' />
 			</div>
 		</section>
 	);

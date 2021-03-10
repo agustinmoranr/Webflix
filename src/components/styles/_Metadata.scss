@@ -1,0 +1,24 @@
+.metadata {
+	&:not(:last-child) {
+		margin-bottom: 14rem;
+	}
+
+	&-link:not(:last-child)::after {
+		content: ', ';
+	}
+
+	&-tag {
+		color: #777;
+
+		&::after {
+			content: ': ';
+		}
+	}
+
+	a {
+		word-break: break-word;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
