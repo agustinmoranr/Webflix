@@ -23,7 +23,7 @@ const ItemModalHero = ({ heroData, modalItemProps }) => {
 			<video
 				ref={heroPlayer}
 				onEnded={handleReplay}
-				poster={`${imgPath}${modalItemProps.poster_path}`}
+				poster={`${imgPath}${modalItemProps.poster_path || posterVideo}`}
 				className='modal-hero__video'
 				muted>
 				<source src={video} type='video/mp4' />
@@ -44,17 +44,21 @@ const ItemModalHero = ({ heroData, modalItemProps }) => {
 					<span className='modal-hero__actions--play'>
 						<RectangularButton icon='play_arrow' text='Reanudar' />
 					</span>
-					<span>
-						<RoundedButton
-							icon={itemExistence ? 'delete_outline' : 'add'}
-							action={itemExistence ? handleDeleteMyListItem : handleAddMyList}
-						/>
-					</span>
-					<span>
-						<RoundedButton icon='thumb_up_off_alt' />
-					</span>
-					<span>
-						<RoundedButton icon='thumb_down_off_alt' />
+					<span className='actions-wrapper'>
+						<span>
+							<RoundedButton
+								icon={itemExistence ? 'delete_outline' : 'add'}
+								action={
+									itemExistence ? handleDeleteMyListItem : handleAddMyList
+								}
+							/>
+						</span>
+						<span>
+							<RoundedButton icon='thumb_up_off_alt' />
+						</span>
+						<span>
+							<RoundedButton icon='thumb_down_off_alt' />
+						</span>
 					</span>
 				</div>
 			</div>

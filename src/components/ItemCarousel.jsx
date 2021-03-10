@@ -5,12 +5,13 @@ import ItemCarouselDetails from './ItemCarouselDetails';
 
 const imgPath = 'https://image.tmdb.org/t/p/w300';
 const ItemCarousel = (props) => {
-	// console.log(props);
 	return (
-		<div className="item-carousel">
+		<div className='item-carousel'>
 			<ItemCarouselPreview
 				src={`${imgPath}${props.poster_path}`}
 				alt={props.overview}
+				onOpen={props.onOpen}
+				props={props}
 			/>
 			<ItemCarouselDetails props={props} />
 		</div>

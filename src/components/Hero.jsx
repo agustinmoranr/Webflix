@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 // import './styles/RectangularButton.scss';
 import useHeroPlayer from '../utils/useHeroPlayer';
 import RectangularButton from './RectangularButton';

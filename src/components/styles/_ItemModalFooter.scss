@@ -33,3 +33,12 @@
 		}
 	}
 }
+
+@media screen and (max-width: '480px') {
+	.maturity-rating-wrapper {
+		flex-direction: column;
+		.mature-title {
+			margin-bottom: 6rem;
+		}
+	}
+}

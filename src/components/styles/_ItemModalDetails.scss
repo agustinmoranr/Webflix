@@ -44,3 +44,10 @@
 	border: 1px solid rgba($--primary-font-color, 0.4);
 	padding: 1rem 6rem;
 }
+
+@media screen and (max-width: '480px') {
+	.modal-details {
+		grid-template-columns: auto;
+		gap: 0px;
+	}
+}

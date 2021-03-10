@@ -1,6 +1,6 @@
 import React from 'react';
 import RoundedButton from './RoundedButton';
-const imgPath = 'https://image.tmdb.org/t/p/w154';
+const imgPath = 'https://image.tmdb.org/t/p/w342';
 
 const ModalEpisodeItem = ({ movie, index }) => {
 	// console.log(movie);

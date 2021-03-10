@@ -30,27 +30,8 @@ const ItemModalDetails = ({ modalItemProps }) => {
 				<div className='modal-details__overview'>{overview}</div>
 			</div>
 			<div className='modal-details__metadata-right'>
-				{/* <p>
-					<span className='modal-details__metadata-right-tag'>Elenco: </span>
-					<span>
-						<a href='#/'>Justin Roiland, </a>
-						<a href='#/'>Chris Parnell, </a>
-						<a href='#/'>Spencer Grammer, </a>
-						<a href='#/'>más</a>
-					</span>
-				</p> */}
 				<Metadata links={elenco} tag='Elenco' />
 				<Metadata links={generos} tag='Géneros' />
-				{/* <p>
-					<span className='modal-details__metadata-right-tag'>
-						Este título es:{' '}
-					</span>
-					<span>
-						<a href='#/'>Absurdo, </a>
-						<a href='#/'>Excéntrico, </a>
-						<a href='#/'> Irreverente</a>
-					</span>
-				</p> */}
 				<Metadata links={about} tag='Este título es' />
 			</div>
 		</section>
