@@ -4,7 +4,7 @@ import ItemModalHero from './ItemModalHero';
 import ItemModalDetails from './ItemModalDetails';
 import ItemModalEpisodes from './ItemModalEpisodes';
 import ItemModalMoreLikeThis from './ItemModalMoreLikeThis';
-import ItemModalRelated from './ItemModalRelated';
+// import ItemModalRelated from './ItemModalRelated';
 import ItemModalFooter from './ItemModalFooter';
 
 const ItemModal = ({ onClose, heroData, modalItemProps, movies }) => {

@@ -4,7 +4,6 @@ import RoundedButton from './RoundedButton';
 const imgPath = 'https://image.tmdb.org/t/p/w342';
 
 const MoreLikeThisCard = ({ movie }) => {
-	// console.log(movie);
 	return (
 		<div className='moreLikeThisCard'>
 			<div className='moreLikeThisCard__preview'>

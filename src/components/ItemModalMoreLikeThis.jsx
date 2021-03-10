@@ -10,7 +10,7 @@ const ItemModalMoreLikeThis = ({ movies }) => {
 	useEffect(() => {
 		if (expandMoreActive) return setMoreLikeThis(movies);
 		setMoreLikeThis(movies.slice(0, 9));
-	}, [expandMoreActive]);
+	}, [expandMoreActive, movies]);
 	return (
 		<section className='moreLikeThis'>
 			<ModalSectionTitle title='Más títulos similares a este' />

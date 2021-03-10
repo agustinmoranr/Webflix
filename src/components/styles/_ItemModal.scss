@@ -48,3 +48,9 @@
 	z-index: 1000;
 	will-change: transform;
 }
+
+@media screen and (max-width: '767px') {
+	.itemModal__container {
+		width: 100vw;
+	}
+}

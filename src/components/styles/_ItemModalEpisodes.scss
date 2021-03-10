@@ -15,12 +15,6 @@
 	}
 }
 
-.episode-header {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-}
-
 .episode-number {
 	display: flex;
 	justify-content: center;
@@ -31,21 +25,67 @@
 	-ms-flex: 0 0 7%;
 	color: #d2d2d2;
 }
-.dropdown-button {
-	flex-direction: row-reverse;
-	padding: 9rem 18rem;
-	background-color: rgb(36, 36, 36);
-	border: 0.1em solid rgb(77, 77, 77);
-	span {
-		font-size: 18rem;
-		font-weight: 600;
-		color: white;
+.episode-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	user-select: none;
+}
+.episode-header__dropdown {
+	position: relative;
+	li:focus,
+	.dropdown-button:focus {
+		outline: 3px solid rgb(255, 255, 255);
 	}
-	i {
-		margin-right: 0;
-		margin-left: 30rem;
-		font-size: 24rem;
-		color: white;
+	.episode-dropdown-menu {
+		visibility: hidden;
+		min-width: max-content;
+		position: absolute;
+		padding: 10rem 0;
+		right: 0;
+		margin-top: 2rem;
+		border: 0.1em solid rgb(77, 77, 77);
+		background-color: rgb(36, 36, 36);
+		font-size: 19rem;
+		z-index: 1;
+
+		li {
+			list-style: none;
+			padding: 9rem 14.5rem;
+
+			&:hover {
+				background: rgb(77, 77, 77);
+			}
+		}
+
+		.label-numSeasons {
+			font-size: 18rem;
+			font-weight: 700;
+			margin-right: 9rem;
+		}
+		.label-numEpisodes {
+			font-size: 15rem;
+		}
+	}
+	.show-menu {
+		visibility: visible;
+	}
+	.dropdown-button {
+		flex-direction: row-reverse;
+		padding: 9rem 18rem;
+		background-color: rgb(36, 36, 36);
+		border: 0.1em solid rgb(77, 77, 77);
+		span {
+			font-size: 18rem;
+			font-weight: 600;
+			color: white;
+		}
+		i {
+			margin-right: 0;
+			margin-left: 30rem;
+			font-size: 24rem;
+			color: white;
+		}
 	}
 }
 
