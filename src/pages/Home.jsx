@@ -81,7 +81,11 @@ export default function App() {
 					</Modal>
 				)}
 				<Layout position={isOpen ? 'fixed' : 'static'}>
-					<Hero heroData={heroData} />
+					<Hero
+						heroData={heroData}
+						itemProps={movies.tendencias[0]}
+						onOpen={getItemModal}
+					/>
 					<main className='home-content'>
 						{myList.length > 0 ? (
 							<Carousel title='Mi Lista' length={myList.length}>

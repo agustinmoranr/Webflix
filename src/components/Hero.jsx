@@ -3,7 +3,7 @@ import useHeroPlayer from '../utils/useHeroPlayer';
 import RectangularButton from './RectangularButton';
 import RoundedButton from './RoundedButton';
 
-const Hero = ({ heroData }) => {
+const Hero = ({ heroData, itemProps, onOpen }) => {
 	const { video, posterVideo, logoSerie } = heroData;
 	const [buttonIcon, setButtonIcon] = useState('volume_off');
 
@@ -11,7 +11,12 @@ const Hero = ({ heroData }) => {
 		buttonIcon,
 		setButtonIcon,
 	);
-
+	const modalProps = {
+		title: itemProps?.title,
+		overview: itemProps?.overview,
+		poster_path: itemProps?.poster_path,
+		id: itemProps?.id,
+	};
 	return (
 		<section className='hero'>
 			<div className='hero-background-dark'></div>
@@ -56,6 +61,7 @@ const Hero = ({ heroData }) => {
 						icon='info'
 						text='Más información'
 						className='hero__controls__wrapper-more-info'
+						action={() => onOpen(modalProps)}
 					/>
 				</div>
 				<div className='hero__controls__player'>
