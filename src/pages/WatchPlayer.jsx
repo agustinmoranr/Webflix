@@ -4,13 +4,15 @@ import './styles/WatchPlayer.scss';
 import { useHistory } from 'react-router-dom';
 import testVideo from '../assets/videos/test-video-2.mp4';
 import RectangularButton from '../components/RectangularButton';
+const posterVideo =
+	'https://occ-0-29-987.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSFemv1LOz5nHsQa6TrW1N_yyCOIMa11goJH_f_n4XAt6ygtncHEo16ESfZDWHHyKC5_E3tnh-2bD6oYBXbjqxb8MOOB.jpg?r=360';
 
 const WatchPlayer = () => {
 	let history = useHistory();
 
 	return (
 		<div className='mediaPlayer'>
-			<video controls className='player'>
+			<video controls autoPlay poster={posterVideo} className='player'>
 				<source src={testVideo} type='video/mp4' />
 			</video>
 			<div className='goBack-btn-wrapper'>

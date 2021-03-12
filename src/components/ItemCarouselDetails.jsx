@@ -1,7 +1,7 @@
 import React from 'react';
 import RoundedButton from './RoundedButton';
 import useAddMyList from '../utils/useAddMyList';
-// import { myListContext } from '../pages/Home';
+import { Link } from 'react-router-dom';
 
 const ItemCarouselDetails = ({ props }) => {
 	const {
@@ -20,7 +20,9 @@ const ItemCarouselDetails = ({ props }) => {
 			<div className='item-carousel__details__controls'>
 				<ul>
 					<li>
-						<RoundedButton icon='play_arrow' />
+						<Link to={`/watch/${props.id}`}>
+							<RoundedButton icon='play_arrow' />
+						</Link>
 					</li>
 					<li>
 						<RoundedButton

@@ -1,11 +1,13 @@
 .mediaPlayer {
+	width: 100vw;
+	height: 100vh;
 	position: absolute;
 	inset: 0;
 	z-index: 1;
 	overflow: hidden;
 	.player {
-		width: 100vw;
-		max-height: 100vh;
+		width: 100%;
+		height: inherit;
 		object-fit: cover;
 
 		// &:hover {
@@ -47,7 +49,7 @@
 		i {
 			margin: 0;
 			color: white;
-			font-size: 68rem;
+			font-size: 60rem;
 		}
 		&:hover {
 			transform: scale(1.2);

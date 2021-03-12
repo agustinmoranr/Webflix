@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useHeroPlayer from '../utils/useHeroPlayer';
 import RectangularButton from './RectangularButton';
 import RoundedButton from './RoundedButton';
+import { Link } from 'react-router-dom';
 
 const Hero = ({ heroData, itemProps, onOpen }) => {
 	const { video, posterVideo, logoSerie } = heroData;
@@ -51,11 +52,13 @@ const Hero = ({ heroData, itemProps, onOpen }) => {
 			</article>
 			<div className='hero__controls'>
 				<div className='hero__controls__wrapper'>
-					<RectangularButton
-						icon='play_arrow'
-						text='Reproducir'
-						className='hero__controls__wrapper-play'
-					/>
+					<Link to={`/watch/${itemProps?.id}`}>
+						<RectangularButton
+							icon='play_arrow'
+							text='Reproducir'
+							className='hero__controls__wrapper-play'
+						/>
+					</Link>
 
 					<RectangularButton
 						icon='info'

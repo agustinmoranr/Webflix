@@ -75,17 +75,16 @@
 		button {
 			display: flex;
 			align-items: center;
-			&:not(:last-child) {
-				margin-right: 14rem;
-			}
-			&:first-child span {
-				font-weight: 600;
+			&:hover {
+				opacity: 0.7;
 			}
 		}
 		&-play {
+			margin-right: 14rem;
 			span,
 			.material-icons {
 				color: $--primary-color;
+				font-weight: 600;
 			}
 		}
 		&-more-info {
