@@ -3,6 +3,7 @@ import useAddMyList from '../utils/useAddMyList';
 import useHeroPlayer from '../utils/useHeroPlayer';
 import RectangularButton from './RectangularButton';
 import RoundedButton from './RoundedButton';
+import { Link } from 'react-router-dom';
 
 const imgPath = 'https://image.tmdb.org/t/p/w780';
 
@@ -42,7 +43,9 @@ const ItemModalHero = ({ heroData, modalItemProps }) => {
 				</div>
 				<div className='modal-hero__details--actions'>
 					<span className='modal-hero__actions--play'>
-						<RectangularButton icon='play_arrow' text='Reanudar' />
+						<Link to={`/watch/${modalItemProps.id}`}>
+							<RectangularButton icon='play_arrow' text='Reanudar' />
+						</Link>
 					</span>
 					<span className='actions-wrapper'>
 						<span>
