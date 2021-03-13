@@ -86,6 +86,14 @@
 			margin-left: 30rem;
 			font-size: 24rem;
 			color: white;
+			transition: transform 0.2s linear 0s;
+			transform: none;
+		}
+	}
+
+	.arrow-rotate {
+		i {
+			transform: rotate(180deg);
 		}
 	}
 }

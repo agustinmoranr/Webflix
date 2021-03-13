@@ -14,9 +14,11 @@ const ModalEpisodesHeader = ({ onChangeSeason }) => {
 			<ModalSectionTitle title='Episodios' />
 			<div tabIndex='5' className='episode-header__dropdown'>
 				<RectangularButton
-					icon={showMenu ? 'arrow_drop_up' : 'arrow_drop_down'}
+					icon='arrow_drop_down'
 					text={`Temporada ${seasonNum}`}
-					className='dropdown-button'
+					className={
+						showMenu ? `dropdown-button arrow-rotate` : 'dropdown-button'
+					}
 					action={() => setShowMenu(!showMenu)}
 				/>
 				<ul className={`episode-dropdown-menu ${showMenu ? 'show-menu' : ''}`}>

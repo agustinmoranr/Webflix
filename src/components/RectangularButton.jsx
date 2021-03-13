@@ -6,7 +6,7 @@ const RectangularButton = ({ icon, text, className, action }) => {
 			onClick={action ? action : null}
 			className={`rectangular-button ${className || ''}`}>
 			<i className='material-icons'>{icon}</i>
-			<span>{text}</span>
+			{text && <span>{text}</span>}
 		</button>
 	);
 };

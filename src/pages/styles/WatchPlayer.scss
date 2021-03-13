@@ -25,6 +25,7 @@
 	top: 0;
 	left: 0;
 	margin: 36rem;
+	user-select: none;
 	.goBack-btn {
 		margin-right: 20rem;
 		padding: 1rem 6rem;
@@ -56,12 +57,14 @@
 
 			& ~ .goBack-drop-text {
 				visibility: visible;
+				transform: scale(1.2);
+				transition: transform 0.25s cubic-bezier(0.5, 0, 0.1, 1), opacity 0.25s;
 			}
 		}
 	}
 	.goBack-drop-text {
 		visibility: hidden;
 		font-size: 20rem;
-		transform: scale(1.2);
+		pointer-events: none;
 	}
 }
