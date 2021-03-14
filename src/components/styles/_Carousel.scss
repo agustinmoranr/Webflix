@@ -19,55 +19,70 @@
 		position: relative;
 		// border: 1px solid greenyellow;
 		margin-left: 3vw;
+	}
+
+	.items-container {
+		min-height: 300px;
+		width: inherit;
+		display: flex;
+		white-space: nowrap;
+		transition: all 1s;
+		overflow: scroll;
+		scroll-behavior: smooth;
+		padding: 50px 0;
+		// border: 1px solid blue;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		/* Hide scrollbar for IE, Edge and Firefox */
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+		&:hover .item-carousel {
+			filter: brightness(50%);
+		}
+
+		&:hover .item-carousel:hover {
+			-webkit-transform: scale(1.3);
+			transform: scale(1.3);
+			filter: brightness(100%);
+		}
+	}
+
+	.nav-prev,
+	.nav-next {
+		max-height: 165px;
+		visibility: hidden;
+		position: absolute;
+		top: 50px;
+		z-index: 3;
+		font-size: 54rem;
+		text-align: center;
+		line-height: normal;
+		background: rgba($--primary-color, 0.7);
+		bottom: 0;
+
+		&:hover {
+			background: rgba($--primary-color, 0.9);
+		}
+	}
+	.nav-prev {
+		left: 0;
+	}
+	.nav-next {
+		right: 0;
+	}
+}
+
+@media screen and (max-width: '1440px') {
+	.carousel {
+		margin: 3vw 0;
+
+		&__container {
+			max-height: 220px;
+		}
 
 		.items-container {
-			min-height: 300px;
-			width: inherit;
-			display: flex;
-			white-space: nowrap;
-			transition: all 1s;
-			overflow: scroll;
-			scroll-behavior: smooth;
-			padding: 50px 0;
-			// border: 1px solid blue;
-			&::-webkit-scrollbar {
-				display: none;
-			}
-			/* Hide scrollbar for IE, Edge and Firefox */
-			-ms-overflow-style: none; /* IE and Edge */
-			scrollbar-width: none; /* Firefox */
-			&:hover .item-carousel {
-				filter: brightness(50%);
-			}
-
-			&:hover .item-carousel:hover {
-				-webkit-transform: scale(1.3);
-				transform: scale(1.3);
-				filter: brightness(100%);
-			}
-		}
-		.nav-prev,
-		.nav-next {
-			max-height: 165px;
-			visibility: hidden;
-			position: absolute;
-			top: 50px;
-			z-index: 3;
-			font-size: 54rem;
-			text-align: center;
-			line-height: normal;
-			background: rgba($--primary-color, 0.7);
-			bottom: 0;
-
-			&:hover {
-				background: rgba($--primary-color, 0.9);
-			}
-		}
-		.nav-prev {
-			left: 0;
-		}
-		.nav-next {
-			right: 0;
+			min-height: 200px;
 		}
 	}
 }
