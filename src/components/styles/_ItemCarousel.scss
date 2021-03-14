@@ -1,12 +1,15 @@
 .item-carousel {
+	width: 16.6%;
 	min-width: 16.6%;
 	height: fit-content;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	padding: 0 2px;
-	// border: 1px solid red;
 	transition: 450ms all;
+	border-radius: 8rem;
+	overflow: hidden;
+	// border: 1px solid red;
 
 	&:first-child {
 		-webkit-transform-origin: center left;
@@ -25,12 +28,14 @@
 
 @media screen and(max-width: "1440px") {
 	.item-carousel {
+		width: 20%;
 		min-width: 20%;
 	}
 }
 
 @media screen and(max-width: "1024px") {
 	.item-carousel {
+		width: 30%;
 		min-width: 30%;
 	}
 }
@@ -47,6 +52,7 @@
 
 @media screen and (max-width: '480px') {
 	.item-carousel {
+		width: 46%;
 		min-width: 46%;
 	}
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCarouselPreview from './ItemCarouselPreview';
 import ItemCarouselDetails from './ItemCarouselDetails';
 
-const imgPath = 'https://image.tmdb.org/t/p/w300';
+const imgPath = 'https://image.tmdb.org/t/p/w342';
 const ItemCarousel = (props) => {
 	return (
 		<div className='item-carousel'>

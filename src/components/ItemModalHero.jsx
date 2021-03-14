@@ -21,52 +21,54 @@ const ItemModalHero = ({ heroData, modalItemProps }) => {
 	} = useAddMyList(modalItemProps);
 	return (
 		<section className='modal-hero'>
-			<video
-				ref={heroPlayer}
-				onEnded={handleReplay}
-				poster={`${imgPath}${modalItemProps.poster_path || posterVideo}`}
-				className='modal-hero__video'
-				muted>
-				<source src={video} type='video/mp4' />
-			</video>
-			<div className='modal-hero__details'>
-				<div className='modal-hero__details--img'>
-					<picture>
-						<img src={logoSerie} alt='logo de la seríe' />
-					</picture>
-				</div>
-				<div className='modal-hero__details--duration'>
-					<span className='progress'>
-						<span></span>
-					</span>
-					<span>20 de 50 min</span>
-				</div>
-				<div className='modal-hero__details--actions'>
-					<span className='modal-hero__actions--play'>
-						<Link to={`/watch/${modalItemProps.id}`}>
-							<RectangularButton icon='play_arrow' text='Reanudar' />
-						</Link>
-					</span>
-					<span className='actions-wrapper'>
-						<span>
-							<RoundedButton
-								icon={itemExistence ? 'delete_outline' : 'add'}
-								action={
-									itemExistence ? handleDeleteMyListItem : handleAddMyList
-								}
-							/>
+			<div className='modal-hero__container'>
+				<video
+					ref={heroPlayer}
+					onEnded={handleReplay}
+					poster={`${imgPath}${modalItemProps.poster_path || posterVideo}`}
+					className='modal-hero__video'
+					muted>
+					<source src={video} type='video/mp4' />
+				</video>
+				<div className='modal-hero__details'>
+					<div className='modal-hero__details--img'>
+						<picture>
+							<img src={logoSerie} alt='logo de la seríe' />
+						</picture>
+					</div>
+					<div className='modal-hero__details--duration'>
+						<span className='progress'>
+							<span></span>
 						</span>
-						<span>
-							<RoundedButton icon='thumb_up_off_alt' />
+						<span>20 de 50 min</span>
+					</div>
+					<div className='modal-hero__details--actions'>
+						<span className='modal-hero__actions--play'>
+							<Link to={`/watch/${modalItemProps.id}`}>
+								<RectangularButton icon='play_arrow' text='Reanudar' />
+							</Link>
 						</span>
-						<span>
-							<RoundedButton icon='thumb_down_off_alt' />
+						<span className='actions-wrapper'>
+							<span>
+								<RoundedButton
+									icon={itemExistence ? 'delete_outline' : 'add'}
+									action={
+										itemExistence ? handleDeleteMyListItem : handleAddMyList
+									}
+								/>
+							</span>
+							<span>
+								<RoundedButton icon='thumb_up_off_alt' />
+							</span>
+							<span>
+								<RoundedButton icon='thumb_down_off_alt' />
+							</span>
 						</span>
-					</span>
+					</div>
 				</div>
-			</div>
-			<div className='toggle-mute-replay'>
-				<RoundedButton icon={buttonIcon} action={handleIcon} />
+				<div className='toggle-mute-replay'>
+					<RoundedButton icon={buttonIcon} action={handleIcon} />
+				</div>
 			</div>
 		</section>
 	);

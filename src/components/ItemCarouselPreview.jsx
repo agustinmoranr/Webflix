@@ -16,11 +16,11 @@ const ItemCarouselPreview = ({ src, alt, onOpen, props }) => {
 		id: props.id,
 	};
 	return (
-		<picture
-			onClick={midMediaQuery ? () => onOpen(modalProps) : null}
-			className='item-carousel__img'>
-			<img src={src} alt={alt} />
-		</picture>
+		<div className='item-carousel__img'>
+			<picture onClick={midMediaQuery ? () => onOpen(modalProps) : null}>
+				<img src={src} alt={alt} />
+			</picture>
+		</div>
 	);
 };
 
