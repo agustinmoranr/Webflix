@@ -115,6 +115,10 @@ header.active {
 	}
 }
 
+.hamburger.active {
+	margin-left: 0;
+}
+
 .account-navigation {
 	padding: 5px;
 	ul {
@@ -186,7 +190,7 @@ header.active {
 	.site-navigation__items {
 		display: none;
 	}
-	.site-navigation__items.modal {
+	.site-navigation__items.dropdown {
 		min-height: min-content;
 		width: 280px;
 		display: block;
