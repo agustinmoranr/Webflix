@@ -2,13 +2,13 @@
 	display: grid;
 	grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 	gap: 32rem;
-	padding-top: 14rem;
+	padding-top: 14px;
 	font-size: 18rem;
 
 	&__overview {
 		font-weight: 400;
-		margin-top: 24rem;
-		margin-bottom: 9rem;
+		margin-top: 24px;
+		margin-bottom: 9px;
 	}
 	&__metadata-left {
 		margin-right: 2vw;
@@ -17,14 +17,14 @@
 		font-size: 16rem;
 		font-weight: 600;
 		span:not(:last-child) {
-			margin-right: 10rem;
+			margin-right: 10px;
 		}
 	}
 
 	&__metadata-right {
 		font-size: 15rem;
 		p:not(:last-child) {
-			margin-bottom: 14rem;
+			margin-bottom: 14px;
 		}
 		&-tag {
 			color: #777;
@@ -42,7 +42,7 @@
 }
 .metadata-rating {
 	border: 1px solid rgba($--primary-font-color, 0.4);
-	padding: 1rem 6rem;
+	padding: 1px 6px;
 }
 
 @media screen and (max-width: '480px') {

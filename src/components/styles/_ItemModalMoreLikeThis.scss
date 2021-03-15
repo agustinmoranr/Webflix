@@ -26,20 +26,20 @@
 		min-height: 100%;
 	}
 	&__metadata-main {
-		padding: 16rem;
+		padding: 16px;
 	}
 	.metadata-overview {
-		padding: 0 14rem 14rem;
+		padding: 0 14px 14px;
 		color: #d2d2d2;
 		font-size: 14rem;
 		font-weight: 600;
 	}
 	.metadata-recomendations {
-		margin-bottom: 4rem;
+		margin-bottom: 4px;
 		font-weight: 600;
 	}
 	.metadata-rating {
-		margin-right: 8rem;
+		margin-right: 8px;
 		font-weight: 600;
 		white-space: nowrap;
 	}
@@ -112,7 +112,7 @@
 		border-width: 2px;
 		background-color: rgba(42, 42, 42, 0.6);
 		border-color: rgba(255, 255, 255, 0.5);
-		padding: 8rem;
+		padding: 8px;
 	}
 }
 

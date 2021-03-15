@@ -11,7 +11,7 @@
 			line-height: 20px;
 		}
 		p {
-			margin-right: 14rem;
+			margin-right: 14px;
 			line-height: 22px;
 
 			display: inline-block;
@@ -19,17 +19,17 @@
 		.mature-title {
 			vertical-align: top;
 			color: #777;
-			margin-right: 14rem;
+			margin-right: 14px;
 			white-space: nowrap;
 		}
 		.maturity-rating {
 			display: inline-block;
 		}
 		.maturity-class {
-			padding: 1rem 6rem;
+			padding: 1px 6px;
 			text-transform: uppercase;
 			border: solid 1px rgba(255, 255, 255, 0.4);
-			margin-right: 14rem;
+			margin-right: 14px;
 		}
 	}
 }
@@ -38,7 +38,7 @@
 	.maturity-rating-wrapper {
 		flex-direction: column;
 		.mature-title {
-			margin-bottom: 6rem;
+			margin-bottom: 6px;
 		}
 	}
 }

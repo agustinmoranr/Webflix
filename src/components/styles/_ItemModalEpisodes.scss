@@ -2,7 +2,7 @@
 	min-height: 128rem;
 	display: flex;
 	align-items: center;
-	padding: 16rem;
+	padding: 16px;
 	overflow: hidden;
 	cursor: pointer;
 	border-radius: 4px;
@@ -42,9 +42,9 @@
 		visibility: hidden;
 		min-width: max-content;
 		position: absolute;
-		padding: 10rem 0;
+		padding: 10px 0;
 		right: 0;
-		margin-top: 2rem;
+		margin-top: 2px;
 		border: 0.1em solid rgb(77, 77, 77);
 		background-color: rgb(36, 36, 36);
 		font-size: 19rem;
@@ -52,7 +52,7 @@
 
 		li {
 			list-style: none;
-			padding: 9rem 14.5rem;
+			padding: 9px 14.5px;
 
 			&:hover {
 				background: rgb(77, 77, 77);
@@ -62,7 +62,7 @@
 		.label-numSeasons {
 			font-size: 18rem;
 			font-weight: 700;
-			margin-right: 9rem;
+			margin-right: 9px;
 		}
 		.label-numEpisodes {
 			font-size: 15rem;
@@ -73,7 +73,7 @@
 	}
 	.dropdown-button {
 		flex-direction: row-reverse;
-		padding: 9rem 18rem;
+		padding: 9px 18px;
 		background-color: rgb(36, 36, 36);
 		border: 0.1em solid rgb(77, 77, 77);
 		span {
@@ -83,7 +83,7 @@
 		}
 		i {
 			margin-right: 0;
-			margin-left: 30rem;
+			margin-left: 30px;
 			font-size: 24rem;
 			color: white;
 			transition: transform 0.2s linear 0s;
@@ -143,7 +143,7 @@
 	right: 0;
 	bottom: 0;
 	background-color: rgba(255, 255, 255, 0.3);
-	margin-right: 10rem;
+	margin-right: 10px;
 	flex-grow: 1;
 	span {
 		width: 87%;
@@ -157,7 +157,7 @@
 .episode-metadata-wrapper {
 	display: flex;
 	justify-content: space-between;
-	padding: 16rem 16rem 8rem 16rem;
+	padding: 16px 16px 8px 16px;
 	font-weight: 700;
 	.episode-title {
 		font-size: 16rem;
@@ -166,7 +166,7 @@
 .episode-synopsis {
 	font-size: 15rem;
 	line-height: 20px;
-	padding: 0 16rem 16rem;
+	padding: 0 16px 16px;
 	color: #d2d2d2;
 	font-weight: 600;
 }
@@ -190,12 +190,12 @@
 	}
 	.episode-header__dropdown {
 		.dropdown-button {
-			padding: 6rem 12rem;
+			padding: 6px 12px;
 			span {
 				font-size: 15rem;
 			}
 			i {
-				margin-left: 2rem;
+				margin-left: 2px;
 			}
 		}
 	}

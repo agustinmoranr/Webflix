@@ -39,7 +39,7 @@
 	&__details {
 		font-weight: 400;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
-		line-height: 36rem;
+		line-height: 36px;
 	}
 	&__details {
 		display: none;
@@ -80,7 +80,7 @@
 			}
 		}
 		&-play {
-			margin-right: 14rem;
+			margin-right: 14px;
 			span,
 			.material-icons {
 				color: $--primary-color;
@@ -99,7 +99,7 @@
 			height: 50px;
 			border: 1px solid $--primary-font-color;
 			border-radius: 50%;
-			padding: 12rem;
+			padding: 12px;
 			font-weight: 300;
 			margin-right: 20px;
 			text-align: center;
@@ -110,7 +110,7 @@
 		}
 		span {
 			width: 7vw;
-			padding: 10rem 10rem 10rem 20rem;
+			padding: 10px 10px 10px 20px;
 			font-size: 22rem;
 			border-left: 2px solid $--secondary-font-color;
 			background-color: rgba($--primary-color, 0.6);
@@ -173,7 +173,7 @@
 			&__synopsis,
 			&__title,
 			&__details {
-				line-height: 18rem;
+				line-height: 18px;
 			}
 			&__title h2 {
 				font-size: 20rem;
@@ -182,11 +182,11 @@
 			}
 			&__synopsis {
 				font-size: 13rem;
-				margin-bottom: 20rem;
+				margin-bottom: 20px;
 			}
 			&__details {
 				display: flex;
-				margin-bottom: 13rem;
+				margin-bottom: 13px;
 			}
 		}
 	}
@@ -203,7 +203,7 @@
 			&-play {
 				// color: white;
 				text-transform: uppercase;
-				padding: 7rem 18rem;
+				padding: 7px 18px;
 				font-size: 13rem;
 				border-radius: 0px;
 				background: #e50914;
@@ -214,7 +214,7 @@
 			}
 			&-more-info {
 				text-transform: uppercase;
-				padding: 7rem 18rem;
+				padding: 7px 18px;
 				font-size: 13rem;
 				border-radius: 0px;
 				border: 1px solid $--secondary-font-color;
