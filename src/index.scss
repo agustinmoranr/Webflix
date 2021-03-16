@@ -43,9 +43,9 @@ $--third-font-color: #46d369;
 	$icon-color,
 	$border-weight: 1px,
 	$border-color: #e5e5e5,
-	$size-icon: 22rem
+	$size-icon: 22px
 ) {
-	padding: 6rem;
+	padding: 6px;
 	color: $icon-color;
 	border: $border-weight solid $border-color;
 	border-radius: 50%;

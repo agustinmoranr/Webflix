@@ -1,9 +1,9 @@
 .rectangular-button {
-	@include rectangularButton(12rem 28rem, 22rem, 4px, $--primary-font-color);
+	@include rectangularButton(12px 28px, 22px, 4px, $--primary-font-color);
 	i {
 		margin-right: 15px;
 		color: $--primary-color;
-		font-size: 34rem;
+		font-size: 34px;
 	}
 	span {
 		color: $--primary-color;
