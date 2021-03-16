@@ -8,9 +8,10 @@ const useWindowScrollY = () => {
 		let scroll = window.scrollY;
 		return setScroll(scroll);
 	}
-
 	useEffect(() => {
 		window.addEventListener('scroll', updateScroll);
+
+		return () => window.removeEventListener('scroll', updateScroll);
 	}, []);
 	return scroll;
 };

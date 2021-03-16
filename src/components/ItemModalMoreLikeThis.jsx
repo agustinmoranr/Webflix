@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+
 import MoreLikeThisCard from './MoreLikeThisCard';
 import ModalSectionTitle from './ModalSectionTitle';
 import RoundedButton from './RoundedButton';
+
 const ItemModalMoreLikeThis = ({ movies }) => {
 	const [moreLikeThis, setMoreLikeThis] = useState([]);
 	const [expandMoreActive, setExpandMoreActive] = useState(false);
-	// console.log(moreLikeThis);
 
 	useEffect(() => {
 		if (expandMoreActive) return setMoreLikeThis(movies);

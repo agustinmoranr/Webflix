@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import useMediaQuery from '../utils/useMediaQuery';
 
 const ItemCarouselPreview = ({ src, alt, onOpen, props }) => {
-	const midRangeQuery = window.matchMedia('(max-width: 767px)');
-	const [midMediaQuery, setMidMediaQuery] = useState(midRangeQuery.matches);
-	useEffect(() => {
-		const handler = (e) => setMidMediaQuery(e.matches);
-		midRangeQuery.addEventListener('change', handler);
-		return () => midRangeQuery.removeEventListener('change', handler);
-	});
+	const max767Query = useMediaQuery('max', 767);
 
 	const modalProps = {
 		title: props.title,
@@ -15,9 +10,12 @@ const ItemCarouselPreview = ({ src, alt, onOpen, props }) => {
 		poster_path: props.poster_path,
 		id: props.id,
 	};
+
 	return (
-		<div className='item-carousel__img'>
-			<picture onClick={midMediaQuery ? () => onOpen(modalProps) : null}>
+		<div
+			onClick={max767Query ? () => onOpen(modalProps) : null}
+			className='item-carousel__img'>
+			<picture>
 				<img src={src} alt={alt} />
 			</picture>
 		</div>
