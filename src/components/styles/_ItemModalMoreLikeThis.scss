@@ -3,7 +3,7 @@
 	grid-template-columns: repeat(3, 1fr);
 	align-items: stretch;
 	justify-items: stretch;
-	gap: 16rem;
+	gap: 16px;
 	user-select: none;
 }
 
@@ -15,7 +15,7 @@
 	flex: 0 0 31%;
 	border-radius: 6px;
 	overflow: hidden;
-	margin: 1rem;
+	margin: 1px;
 	cursor: pointer;
 
 	&:hover .episode-play-btn {
