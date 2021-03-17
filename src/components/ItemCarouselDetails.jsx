@@ -16,9 +16,7 @@ const ItemCarouselDetails = ({ props }) => {
 		id: props.id,
 	};
 	return (
-		<div
-			onClick={() => props.onOpen(modalProps)}
-			className='item-carousel__details'>
+		<div className='item-carousel__details'>
 			<div className='item-carousel__details__controls'>
 				<ul>
 					<li>
